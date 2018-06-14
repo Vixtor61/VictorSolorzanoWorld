@@ -17,6 +17,8 @@ public class rtype extends edificio {
     String type = "";
     int fases = 0;
     int fasesactual=0;
+    private int rActual = 0;
+    private int resourcepmax =500 ;
     private boolean collect=true;
     
     int RTOTAL;
@@ -47,9 +49,11 @@ public class rtype extends edificio {
         
     }
     public int make(){
+        int a = this.rActual;
         if(collect==true){
             collect=false;
-            return this.getResourceP();
+            this.rActual= 0;
+            return a;
         }
         System.out.print("you already collected this turn");
         return 0;
@@ -61,6 +65,10 @@ public class rtype extends edificio {
    
 }
      public void update(){
+         if(this.rActual + this.resourceP <=  this.resourcepmax){
+             this.rActual = this.rActual +this.resourceP;
+         }
      this.collect=true;
      }
 }
+
