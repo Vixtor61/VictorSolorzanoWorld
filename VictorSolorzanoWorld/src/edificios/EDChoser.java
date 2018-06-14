@@ -86,7 +86,6 @@ public class EDChoser {
                 trainer1.constructTRooP();
                 
                 troopmaker joel = trainer1.getTropa();
-                System.out.print("LOOOOOOOOOOOOOL");
                 return joel;
             case tmaker2:
                 Tmaker_Builder NIGer = new tmaker2();
@@ -98,7 +97,7 @@ public class EDChoser {
          
 
             default:
-                System.out.println("OII m8 there are no troops with that name");
+                System.out.println("OII m8 there are no Buildings with that name");
                 break;
         }
         return null;

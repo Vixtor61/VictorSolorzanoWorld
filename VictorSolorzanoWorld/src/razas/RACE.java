@@ -10,6 +10,7 @@ import edificios.troopmaker;
 import java.util.ArrayList;
 import java.util.Scanner;
 import tropas.tropa;
+import victorsolorzanoworld.player;
 
 /**
  *
@@ -94,13 +95,14 @@ public class RACE {
            
             
             if(index == aux){
+                System.out.print("AHOOOOOOY");
                 return tropList;
             }
         
         }
         return null;
     }
-    public void UPDATE(){
+    public void UPDATE(player p){
         for (rtype rtypeList : rtypeList){
             
             rtypeList.setFasestoBuildA(rtypeList.getFasestoBuildA()+1);
@@ -108,6 +110,8 @@ public class RACE {
         
         }
         for (troopmaker TropLists : tropmakerList){
+            TropLists.update(p);
+            System.out.print("updating");
              TropLists.setFasestoBuildA(TropLists.getFasestoBuildA()+1);
             
                

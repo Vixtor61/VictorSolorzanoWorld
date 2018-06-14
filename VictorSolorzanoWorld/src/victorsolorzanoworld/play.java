@@ -8,7 +8,6 @@ package victorsolorzanoworld;
 
 import edificios.EDChoser;
 import edificios.choseEd;
-import edificios.edificio;
 import edificios.rtype;
 import edificios.troopmaker;
 import edificios.vehiclemaker;
@@ -23,8 +22,7 @@ import tropas.tropa;
 public class play {
  private int fasecounter;
  private int turn;
- private player p = new player();
- private player p2 = new player();
+ 
 private String current;
 
     public String getCurrent() {
@@ -36,18 +34,24 @@ private String current;
     }
 
  public void Start(){
-     
+    player p= new player(1);
+    player p2= new player(2);
      racemenu s =  new racemenu();
      
-     while(!p.getJ().defeat && !p2.getN().defeat){
-         current=p.getJ().getClass().getName();
-         s.menu(current,p);
-         p.getJ().UPDATE();
-         current = p2.getN().getClass().getName();
+     while(!p.isDefeat() && !p2.isDefeat()){
          
-         s.menu(current,p2);
-         p2.getN().UPDATE();
+         s.menu(p.getRace(),p);
+         p.update();
+         System.out.print("TURN P1 ENDED\n");
+         
+         s.menu(p2.getRace(),p2);
+         p2.update();
+         System.out.print("TURN p2 ENDED\n");
+         System.out.print("FASE ENDED\n");
+         this.fasecounter++;
      }
+     
+     System.out.print("GAME ENDED\n");
  }
 
     public int getFasecounter() {

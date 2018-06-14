@@ -10,7 +10,6 @@ import edificios.EDChoser;
 import edificios.choseEd;
 import edificios.troopmaker;
 import java.util.Scanner;
-import tropas.chose;
 
 /**
  *
@@ -21,7 +20,6 @@ public class buildingChoose {
     public void chosea(JOOS a){
         int  p;
         Scanner ax = new Scanner(System.in);
-        System.out.print(a.defeat+" 1\n");
         System.out.print("1- new troopmaker \n");
         System.out.print("2- new rtype1 \n");
         System.out.print("3- new rtype2 \n");
@@ -31,13 +29,9 @@ public class buildingChoose {
         
         switch(p){
         case 1:
-            System.out.print("dddsdsddsdsdsdsdsdsds");
             EDChoser tmaker = new EDChoser(choseEd.tmaker);
-            System.out.print(a.defeat+" 2\n");
             troopmaker t= tmaker.createTmaker();
-            System.out.print(a.defeat+" 3\n");
             a.tropmakerList.add(t);
-            System.out.print(a.defeat+" 4\n");
             break;
         case 2:
             EDChoser rtype1 = new EDChoser(choseEd.rtype1);

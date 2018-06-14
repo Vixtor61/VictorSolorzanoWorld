@@ -16,8 +16,23 @@ public class tropa{
     private int atackt = 0;
     private boolean isA;
     private int Tconstruccion;
+    private int TconstruccionA=0;
     private int tAtacke;
+    public void updateTraining(){
+        this.TconstruccionA = this.TconstruccionA+1;
+        if(this.TconstruccionA >= this.Tconstruccion){
+            this.setIsA(true);
+        }
+    }
 
+    public int getTconstruccionA() {
+        return TconstruccionA;
+    }
+
+    public void setTconstruccionA(int TconstruccionA) {
+        this.TconstruccionA = TconstruccionA;
+    }
+    
     public int getTconstruccion() {
         return Tconstruccion;
     }
@@ -106,6 +121,8 @@ abstract class troopBuilder {
     public abstract void buildvida();
     public abstract void buildattack();
     public abstract void buildstatus();
+    public abstract void buildTconst();
+   
 }
 
 /* "ConcreteBuilder" */
@@ -131,6 +148,12 @@ class JOOBuilder extends troopBuilder {
     public void buildstatus() {
         tropa.setIsA(false);
     }
+
+    @Override
+    public void buildTconst() {
+       
+tropa.setTconstruccion(2);    
+    }
 }
 
 /* "ConcreteBuilder" */
@@ -155,6 +178,11 @@ class NIGBuilder extends troopBuilder {
     public void buildstatus() {
         tropa.setIsA(false);
     }
+    @Override
+    public void buildTconst() {
+       
+tropa.setTconstruccion(2);    
+    }
 }
 class NIGarmy extends troopBuilder {
     
@@ -176,6 +204,11 @@ class NIGarmy extends troopBuilder {
     
     public void buildstatus() {
         tropa.setIsA(false);
+    }
+    @Override
+    public void buildTconst() {
+       
+tropa.setTconstruccion(2);    
     }
 }
 class JOOSarmy extends troopBuilder {
@@ -199,6 +232,11 @@ class JOOSarmy extends troopBuilder {
     public void buildstatus() {
         tropa.setIsA(false);
     }
+    @Override
+    public void buildTconst() {
+       
+tropa.setTconstruccion(2);    
+    }
 }
 
 /* "Director" */
@@ -220,5 +258,6 @@ class training {
         troopBuilder.buildtype();
         troopBuilder.buildattack();
         troopBuilder.buildstatus();
+        troopBuilder.buildTconst();
     }
 }

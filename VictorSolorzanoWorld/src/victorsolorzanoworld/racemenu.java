@@ -15,15 +15,16 @@ import razas.JOOS;
  */
 public class racemenu {
     public void menu(String a,player play){
-    int tp;
+    int tp=1;
     Scanner p = new Scanner(System.in);
     
+    
+    //System.out.print(a);
+    while(tp!=0){
     System.out.print("1 - buildings\n");
     System.out.print("2 - atacar\n");
     System.out.print("3 - terminar Turno\n");
     tp = p.nextInt();
-    //System.out.print(a);
-    while(tp!=0){
     switch(tp){
         case 1:
             Building_Menu MB = new Building_Menu();
@@ -33,17 +34,22 @@ public class racemenu {
             if(a=="razas.NIG"){
                MB.menuEdificio(a,play); 
             }
-            System.out.print(" AMD FOR THE WIN\n");
-            tp=p.nextInt();
+            
             break;
         case 2:
+            if(a=="razas.JOOS"){
+               play.getJ().SHOW(); 
+            }
+            if(a=="razas.NIG"){
+               play.getN().SHOW();
+            }
+            break;
         case 3:
             tp = 0;
             break;
         default:
-            System.out.print("not valid");
-            System.out.print(" AMD FOR THE WIN\n");
-            tp=p.nextInt();
+            System.out.print("not valid\n");
+            
                 
                         
     }    

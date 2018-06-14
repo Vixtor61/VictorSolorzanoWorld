@@ -24,7 +24,6 @@ public class Building_Menu {
         System.out.print("4 - resource building\n");
         System.out.print("5 - salir\n");
         p=g.nextInt();
-        //System.out.print(race);
         switch(p){
             case 1:
                 buildingChoose b = new buildingChoose();
@@ -39,11 +38,17 @@ public class Building_Menu {
                 
                 break;
             case 2:
+                System.out.print("USE TMAKER: \n");
                 if(race == "razas.JOOS"){
-                play.getJ().SHOWTMAKER();    
+                play.getJ().SHOWTMAKER();
+                play.getJ().getTropMaker(0).maketroop(play.getJ(),"especial");
+                play.getJ().SHOW();
+                play.getJ().SHOWTMAKER();
                 }
                 if(race == "razas.NIG"){
                 play.getN().SHOWTMAKER();    
+                play.getN().getTropMaker(0).maketroop(play.getN(),"especial");
+                play.getN().SHOWTMAKER();
                 }
                 break;
             case 3:
