@@ -5,6 +5,9 @@
  */
 package tropas;
 
+import edificios.rtype;
+import edificios.troopmaker;
+
 /**
  *
  * @author victor
@@ -19,6 +22,9 @@ public class tropa{
     private int TconstruccionA=0;
     private int tAtacke;
     private boolean beingAtaked = false;
+    private troopmaker atackingt = null;
+    private rtype Atacking = null;
+    private tropa AtackingT = null;
     
     public void updateTraining(){
         this.TconstruccionA = this.TconstruccionA+1;

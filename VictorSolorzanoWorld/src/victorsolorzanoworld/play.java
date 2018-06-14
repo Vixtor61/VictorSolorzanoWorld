@@ -40,11 +40,11 @@ private String current;
      
      while(!p.isDefeat() && !p2.isDefeat()){
          
-         s.menu(p.getRace(),p);
+         s.menu(p.getRace(),p,p2);
          p.update();
          System.out.print("TURN P1 ENDED\n");
          
-         s.menu(p2.getRace(),p2);
+         s.menu(p2.getRace(),p2,p);
          p2.update();
          System.out.print("TURN p2 ENDED\n");
          System.out.print("FASE ENDED\n");

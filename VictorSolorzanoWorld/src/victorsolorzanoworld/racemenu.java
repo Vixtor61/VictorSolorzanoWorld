@@ -14,7 +14,7 @@ import razas.JOOS;
  * @author victor
  */
 public class racemenu {
-    public void menu(String a,player play){
+    public void menu(String a,player play,player enemi){
     int tp=1;
     Scanner p = new Scanner(System.in);
     

@@ -174,47 +174,18 @@ public class RACE {
         
             
         }
-        public void useRtypeBuilding(int a,player p ){
+        public void useRtypeBuilding(int a,tropa atackerp){
         int contA=0;
         for (rtype resourceB : rtypeList){
-            if(!resourceB.isBuilding() && contA==a){
-                if(p.getRace()=="razas.JOOS"){
-                 
-                    System.out.print(resourceB.getType()+"  fgfkgjhktghfgkjfdslkfkf");
-                    if(resourceB.getType()=="rtype1"){
-                        System.out.print("sdgfsdgfd");
-                       this.resources1 = this.resources1 + resourceB.make(); 
-                    }
-                    if(resourceB.getType()=="rtype2"){
-                       this.resources2 = this.resources2 + resourceB.make(); 
-                    }
-                    if(resourceB.getType()=="rtype3"){
-                       this.resources3 = this.resources3 + resourceB.make(); 
-                    }
-                    
-                    
-                }
-                if(p.getRace()=="razas.NIG"){
-                    if(resourceB.getType()=="rtype4"){
-                       this.resources1 = this.resources1 + resourceB.make(); 
-                    }
-                    if(resourceB.getType()=="rtype5"){
-                       this.resources2 = this.resources2 + resourceB.make(); 
-                    }
-                    if(resourceB.getType()=="rtype6"){
-                       this.resources3 = this.resources3 + resourceB.make(); 
-                    }}
-                
-                
+            if(contA==a){
+                resource
             }
-            else{
-                System.out.print("TMAKER NOT AVADIBLE\n");
-            }
-               contA++;
+               
         
         
         
     }
+        contA++;
     }
     public void restlife(int index,int rest){
         int aux;

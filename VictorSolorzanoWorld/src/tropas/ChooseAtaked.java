@@ -1,0 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tropas;
+
+import java.util.Scanner;
+import victorsolorzanoworld.player;
+
+/**
+ *
+ * @author estudiante
+ */
+public class ChooseAtaked {
+    public void menuattack(tropa a,player enemi){
+    int b;
+    Scanner K = new Scanner(System.in);
+        System.out.print("1-attack rtype\n");
+    System.out.print("2-attack troopmaker\n ");
+    System.out.print("attacke trop\n");
+    b = K.nextInt();
+    switch(b){
+        case 1:
+            if(enemi.getRace()== "razas.JOOS"){
+                enemi.getJ().SHOWRTYPES();
+            }
+            if(enemi.getRace()=="razas.NIG"){
+                
+            }
+            
+    }
+}
+}
