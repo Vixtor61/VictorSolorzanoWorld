@@ -22,8 +22,10 @@ public class racemenu {
     //System.out.print(a);
     while(tp!=0){
     System.out.print("1 - buildings\n");
-    System.out.print("2 - atacar\n");
-    System.out.print("3 - terminar Turno\n");
+    System.out.print("2 - atacar/defender\n");
+    System.out.print("3 - Show resources\n");
+    System.out.print("4 - terminar Turno\n");
+    
     tp = p.nextInt();
     switch(tp){
         case 1:
@@ -45,6 +47,14 @@ public class racemenu {
             }
             break;
         case 3:
+            if(a=="razas.JOOS"){
+               play.getJ().ShowResource();
+            }
+            if(a=="razas.NIG"){
+               play.getN().ShowResource();
+            }
+            break;
+        case 4:
             tp = 0;
             break;
         default:

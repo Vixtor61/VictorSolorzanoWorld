@@ -18,6 +18,8 @@ public class tropa{
     private int Tconstruccion;
     private int TconstruccionA=0;
     private int tAtacke;
+    private boolean beingAtaked = false;
+    
     public void updateTraining(){
         this.TconstruccionA = this.TconstruccionA+1;
         if(this.TconstruccionA >= this.Tconstruccion){
@@ -152,7 +154,7 @@ class JOOBuilder extends troopBuilder {
     @Override
     public void buildTconst() {
        
-tropa.setTconstruccion(2);    
+        tropa.setTconstruccion(3);    
     }
 }
 

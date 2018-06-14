@@ -41,7 +41,7 @@ class rtype1 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("especial");
+        r.type("rtype1");
     }
 
     @Override
@@ -71,7 +71,7 @@ class rtype2 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("especial");
+        r.type("rtype2");
     }
 
     @Override
@@ -99,7 +99,7 @@ class rtype3 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("especial");
+        r.type("rtype3");
     }
 
     @Override
@@ -127,7 +127,7 @@ class rtype4 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("especial");
+        r.type("rtype4");
     }
 
     @Override
@@ -155,7 +155,7 @@ class rtype5 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("especial");
+        r.type("rtype5");
     }
 
     @Override
@@ -184,7 +184,7 @@ class rtype6 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("especial");
+        r.type("rtype6");
     }
 
     @Override

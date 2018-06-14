@@ -28,6 +28,31 @@ public class RACE {
     public ArrayList<tropa> TropList = new ArrayList<tropa>();
     public ArrayList<rtype> rtypeList = new ArrayList<rtype>();
     public ArrayList<troopmaker> tropmakerList = new ArrayList<troopmaker>();
+
+    public String getRtype1name() {
+        return rtype1name;
+    }
+
+    public void setRtype1name(String rtype1name) {
+        this.rtype1name = rtype1name;
+    }
+
+    public String getRtype2name() {
+        return rtype2name;
+    }
+
+    public void setRtype2name(String rtype2name) {
+        this.rtype2name = rtype2name;
+    }
+
+    public String getRtype3name() {
+        return rtype3name;
+    }
+
+    public void setRtype3name(String rtype3name) {
+        this.rtype3name = rtype3name;
+       
+    }
     
     public int getResources() {
         return resources1;
@@ -74,7 +99,7 @@ public class RACE {
         System.out.print("Showing all tropmakers: \n");
         for (troopmaker TropList : tropmakerList){
             
-            System.out.print("tropmaker race:"+TropList.getrace()+" troopmaker type:"+TropList.getType()+" troopmaker life:"+TropList.getVida()+" \n");
+            System.out.print("tropmaker race:"+TropList.getrace()+" troopmaker type:"+TropList.getType()+" troopmaker life:"+TropList.getVida()+ " Status "+ TropList.isBuilding() +"\n");
             
         
         }
@@ -82,8 +107,13 @@ public class RACE {
     public void SHOWRTYPES(){
         System.out.print("Showing all tropmakers: \n");
         for (rtype rtypeList : rtypeList){
-            
+            if(!rtypeList.isBuilding()){
             System.out.print("rtype race:"+rtypeList.getrace()+" troopmaker type:"+rtypeList.getType()+" troopmaker life:"+rtypeList.getVida()+" \n");
+                
+            }
+            {
+                System.out.print("there are rtype buildings being made\n");
+            }
             
         
         }
@@ -105,18 +135,128 @@ public class RACE {
     public void UPDATE(player p){
         for (rtype rtypeList : rtypeList){
             
-            rtypeList.setFasestoBuildA(rtypeList.getFasestoBuildA()+1);
+            rtypeList.UPDATE();
             
         
         }
         for (troopmaker TropLists : tropmakerList){
+            TropLists.UPDATE();
             TropLists.update(p);
             System.out.print("updating");
              TropLists.setFasestoBuildA(TropLists.getFasestoBuildA()+1);
             
                
         
+        
+        
+    }
+        
+            
+        }
+    public void useTmakerBuilding(int a,player p ){
+        int contA=0;
+        for (troopmaker TropLists : tropmakerList){
+            if(!TropLists.isBuilding() && contA==a){
+                if(p.getRace()=="razas.JOOS"){
+                    TropLists.maketroop(p.getJ(), "especial");
+                }
+                if(p.getRace()=="razas.NIG"){
+                    TropLists.maketroop(p.getN(), "especial");
+                }
+                
+                
+            }
+            else{
+                System.out.print("TMAKER NOT AVADIBLE\n");
+            }
+               contA++;
+        
+        
+        
+    }
+        
+            
+        }
+        public void useRtypeBuilding(int a,player p ){
+        int contA=0;
+        for (rtype resourceB : rtypeList){
+            if(!resourceB.isBuilding() && contA==a){
+                if(p.getRace()=="razas.JOOS"){
+                    if(resourceB.getType()=="rtype1"){
+                       this.resources1 = this.resources1 + resourceB.getResourceP(); 
+                    }
+                    if(resourceB.getType()=="rtype2"){
+                       this.resources2 = this.resources2 + resourceB.getResourceP(); 
+                    }
+                    if(resourceB.getType()=="rtype3"){
+                       this.resources3 = this.resources3 + resourceB.getResourceP(); 
+                    }
+                    
+                    
+                }
+                if(p.getRace()=="razas.NIG"){
+                    if(resourceB.getType()=="rtype4"){
+                       this.resources1 = this.resources1 + resourceB.getResourceP(); 
+                    }
+                    if(resourceB.getType()=="rtype5"){
+                       this.resources2 = this.resources2 + resourceB.getResourceP(); 
+                    }
+                    if(resourceB.getType()=="rtype6"){
+                       this.resources3 = this.resources3 + resourceB.getResourceP(); 
+                    }}
+                
+                
+            }
+            else{
+                System.out.print("TMAKER NOT AVADIBLE\n");
+            }
+               contA++;
+        
+        
+        
+    }
+    }
+    public void restlife(int index,int rest){
+        int aux;
+        int aux2;
+        for (tropa tropList : TropList){
+            aux = TropList.indexOf(tropList);
+            
+           
+            if(index == aux){
+                
+                aux2 = tropList.getVida();
+                
+                tropList.vida(aux2 - rest);
+                System.out.print(this.getClass().getName() + " "+ rest + " of life left \n");
+            }
+        
         }
     }
+       
+        public tropa getTrop(int index){
+        int aux;
+        for (tropa tropList : TropList){
+            aux = TropList.indexOf(tropList);
+           
+            System.out.print(tropList.getrace()+" troop type:"+tropList.getType()+ " troop atacck:"+tropList.getAtackt()+" troop life:"+tropList.getVida()+" ");
+            if(index == aux){
+                return tropList;
+            }
+        
+        }
+        return null;
+    }
+        
+    public void ShowResource(){
+        System.out.print(this.rtype1name+": "+this.resources1+"\n");
+        System.out.print(this.rtype2name+": "+this.resources2+"\n");
+        System.out.print(this.rtype3name+": "+this.resources3+"\n");
+    }
+        
+        
+        
+    }
     
-}
+    
+

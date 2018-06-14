@@ -16,6 +16,16 @@ public class edificio{
     private String type= "";
     private int fasesTOBUILD=0;
     private int FasestoBuildA=0;
+    private boolean building = true;
+
+    public boolean isBuilding() {
+        return building;
+    }
+
+    public void setBuilding(boolean building) {
+        this.building = building;
+    }
+    
 
     public String getRace() {
         return race;
@@ -70,7 +80,12 @@ public class edificio{
         vida = vida-rest;
                 
     }
-    
+    public void UPDATE(){
+        this.FasestoBuildA = this.FasestoBuildA+1;
+        if(this.FasestoBuildA >= this.fasesTOBUILD){
+            this.setBuilding(false);
+        }
+    }
 
     
 }
