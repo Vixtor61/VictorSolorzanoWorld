@@ -5,12 +5,14 @@
  */
 package victorsolorzanoworld;
 
+import razas.JOOS;
+import razas.NIG;
+
 /**
  *
  * @author victor
  */
-import razas.JOOS;
-import razas.NIG;
+
 
 public class VictorSolorzanoWorld {
 
@@ -34,7 +36,7 @@ public class VictorSolorzanoWorld {
         p.atack(j,j,0);
         j.SHOW();
        */
-        /*
+   /*     
         JOOS j = new JOOS();
         NIG n = new NIG();
         

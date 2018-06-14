@@ -15,7 +15,25 @@ public class tropa{
     private String type= "";
     private int atackt = 0;
     private boolean isA;
+    private int Tconstruccion;
+    private int tAtacke;
 
+    public int getTconstruccion() {
+        return Tconstruccion;
+    }
+
+    public void setTconstruccion(int Tconstruccion) {
+        this.Tconstruccion = Tconstruccion;
+    }
+
+    public int gettAtacke() {
+        return tAtacke;
+    }
+
+    public void settAtacke(int tAtacke) {
+        this.tAtacke = tAtacke;
+    }
+    
     public String getRace() {
         return race;
     }

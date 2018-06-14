@@ -24,6 +24,7 @@ abstract class Eresource_Builder {
     public abstract void buildrace();
     public abstract void buildtype();
     public abstract void buildvida();
+    public abstract void buildFASESB();
     public abstract void buildR();
     
 
@@ -32,119 +33,173 @@ abstract class Eresource_Builder {
 /* "ConcreteBuilder" */
 class rtype1 extends Eresource_Builder{
     
+    @Override
     public void buildrace() {
         r.race("JOO");
         System.out.print("THE JOO SAYS MONEY \n");
     }
 
+    @Override
     public void buildtype() {
         r.type("especial");
     }
 
+    @Override
     public void buildvida() {
         r.vida(45);
     }
+    @Override
     public void buildR() {
         r.setResourceP(45);
+    }
+
+    @Override
+    public void buildFASESB() {
+        r.setFasesTOBUILD(2);
     }
     
 }
 
 class rtype2 extends Eresource_Builder{
     
+    @Override
     public void buildrace() {
         r.race("JOO");
         System.out.print("THE JOO SAYS MONEY \n");
     
     }
 
+    @Override
     public void buildtype() {
         r.type("especial");
     }
 
+    @Override
     public void buildvida() {
         r.vida(45);
     }
+    @Override
     public void buildR() {
         r.setResourceP(45);
     }
+    @Override
+    public void buildFASESB() {
+        r.setFasesTOBUILD(2);
+    }
+    
     
 }
 class rtype3 extends Eresource_Builder{
     
+    @Override
     public void buildrace() {
         r.race("JOO");
         System.out.print("THE JOO SAYS MONEY \n");
     }
 
+    @Override
     public void buildtype() {
         r.type("especial");
     }
 
+    @Override
     public void buildvida() {
         r.vida(45);
     }
+    @Override
     public void buildR() {
         r.setResourceP(45);
     }
+    @Override
+    public void buildFASESB() {
+        r.setFasesTOBUILD(2);
+    }
+    
     
 }
 class rtype4 extends Eresource_Builder{
     
+    @Override
     public void buildrace() {
         r.race("NIG");
         System.out.print("THE NIG SAY OGHA BOOGA \n");
     }
 
+    @Override
     public void buildtype() {
         r.type("especial");
     }
 
+    @Override
     public void buildvida() {
         r.vida(120);
     }
+    @Override
     public void buildR() {
         r.setResourceP(46);
     }
+    @Override
+    public void buildFASESB() {
+        r.setFasesTOBUILD(2);
+    }
+    
     
 }
 class rtype5 extends Eresource_Builder{
     
+    @Override
     public void buildrace() {
         r.race("NIG");
         System.out.print("THE NIG SAYS GOHA \n");
     }
 
+    @Override
     public void buildtype() {
         r.type("especial");
     }
 
+    @Override
     public void buildvida() {
         r.vida(165);
     }
+    @Override
     public void buildR() {
         r.setResourceP(36);
     }
+    @Override
+    public void buildFASESB() {
+        r.setFasesTOBUILD(2);
+    }
+    
     
     
 }
 class rtype6 extends Eresource_Builder{
     
+    @Override
     public void buildrace() {
         r.race("NIG");
         System.out.print("THE NIG SAYS OGHA BOOga \n");
     }
 
+    @Override
     public void buildtype() {
         r.type("especial");
     }
 
+    @Override
     public void buildvida() {
         r.vida(1000);
     }
+    @Override
     public void buildR() {
         r.setResourceP(2);
     }
+    @Override
+    public void buildFASESB() {
+        r.setFasesTOBUILD(2);
+    }
+    
     
 }
 
@@ -169,6 +224,6 @@ class Rtypemaker {
         rtypebuilder.buildrace();
         rtypebuilder.buildtype();
         rtypebuilder.buildR();
-       
+       rtypebuilder.buildFASESB();
     }
 }

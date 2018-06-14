@@ -14,6 +14,32 @@ public class edificio{
     private int vida = 0;
     private String race = "";
     private String type= "";
+    private int fasesTOBUILD=0;
+    private int FasestoBuildA=0;
+
+    public String getRace() {
+        return race;
+    }
+
+    public void setRace(String race) {
+        this.race = race;
+    }
+
+    public int getFasesTOBUILD() {
+        return fasesTOBUILD;
+    }
+
+    public void setFasesTOBUILD(int fasesTOBUILD) {
+        this.fasesTOBUILD = fasesTOBUILD;
+    }
+
+    public int getFasestoBuildA() {
+        return FasestoBuildA;
+    }
+
+    public void setFasestoBuildA(int FasestoBuildA) {
+        this.FasestoBuildA = FasestoBuildA;
+    }
    
 
     public void vida(int vida) {

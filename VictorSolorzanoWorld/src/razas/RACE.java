@@ -23,38 +23,11 @@ public class RACE {
     private int resources2;
     private int resources3;
     private int live;
-    public boolean defeat = true;
+    public boolean defeat = false;
     public ArrayList<tropa> TropList = new ArrayList<tropa>();
     public ArrayList<rtype> rtypeList = new ArrayList<rtype>();
     public ArrayList<troopmaker> tropmakerList = new ArrayList<troopmaker>();
-    public void menuEdificio(JOOS a){
-        int p;
-        Scanner g = new Scanner(System.in);
-        
-        System.out.print("1 - create a building\n");
-        System.out.print("2 - troopmakerbuilding\n");
-        System.out.print("3 - vehiclemaker building\n");
-        System.out.print("4 - resource building\n");
-        System.out.print("5 - salir\n");
-        p=g.nextInt();
-        switch(p){
-            case 1:
-                buildingChoose b = new buildingChoose();
-                b.chosea(a);
-                break;
-            case 2:
-                a.SHOWTMAKER();
-                break;
-            case 3:
-                
-                break;
-            case 4:
-                
-            default:
-                break;
-                
-        }
-    }
+    
     public int getResources() {
         return resources1;
     }
@@ -126,6 +99,20 @@ public class RACE {
         
         }
         return null;
+    }
+    public void UPDATE(){
+        for (rtype rtypeList : rtypeList){
+            
+            rtypeList.setFasestoBuildA(rtypeList.getFasestoBuildA()+1);
+            
+        
+        }
+        for (troopmaker TropLists : tropmakerList){
+             TropLists.setFasestoBuildA(TropLists.getFasestoBuildA()+1);
+            
+               
+        
+        }
     }
     
 }

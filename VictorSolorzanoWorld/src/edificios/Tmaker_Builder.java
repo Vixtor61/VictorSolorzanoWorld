@@ -24,24 +24,33 @@ abstract class Tmaker_Builder {
     public abstract void buildrace();
     public abstract void buildtype();
     public abstract void buildvida();
-    
+    public abstract void buildBUILD();
 
 }
 
 /* "ConcreteBuilder" */
 class tmaker1 extends Tmaker_Builder{
     
+    @Override
     public void buildrace() {
         r.race("JOO");
         System.out.print("THE JOO SAYS MONEY \n");
     }
 
+    @Override
     public void buildtype() {
         r.type("especial");
     }
 
+    @Override
     public void buildvida() {
         r.vida(45);
+    }
+
+    
+    @Override
+    public void buildBUILD() {
+        r.setFasesTOBUILD(2);
     }
     
     
@@ -49,17 +58,24 @@ class tmaker1 extends Tmaker_Builder{
 
 class tmaker2 extends Tmaker_Builder{
     
+    @Override
     public void buildrace() {
         r.race("NIG");
         System.out.print("THE NIG SAYS MONEY \n");
     }
 
+    @Override
     public void buildtype() {
         r.type("especial");
     }
 
+    @Override
     public void buildvida() {
         r.vida(45);
+    }
+    @Override
+    public void buildBUILD() {
+        r.setFasesTOBUILD(2);
     }
     
     
@@ -82,7 +98,7 @@ class Ttypemaker {
         rtypebuilder.buildvida();
         rtypebuilder.buildrace();
         rtypebuilder.buildtype();
-     
+        rtypebuilder.buildBUILD();
        
     }
 }

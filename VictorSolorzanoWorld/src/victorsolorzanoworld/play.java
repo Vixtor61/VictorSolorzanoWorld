@@ -23,17 +23,52 @@ import tropas.tropa;
 public class play {
  private int fasecounter;
  private int turn;
- private JOOS j = null;
-private NIG n = null;
+ private player p = new player();
+ private player p2 = new player();
+private String current;
+
+    public String getCurrent() {
+        return current;
+    }
+
+    public void setCurrent(String current) {
+        this.current = current;
+    }
 
  public void Start(){
-     j = new JOOS();
-     n = new NIG();
-     while(j.defeat && n.defeat){
-         j.menuEdificio(j);
+     
+     racemenu s =  new racemenu();
+     
+     while(!p.getJ().defeat && !p2.getN().defeat){
+         current=p.getJ().getClass().getName();
+         s.menu(current,p);
+         p.getJ().UPDATE();
+         current = p2.getN().getClass().getName();
+         
+         s.menu(current,p2);
+         p2.getN().UPDATE();
      }
  }
- 
+
+    public int getFasecounter() {
+        return fasecounter;
+    }
+
+    public void setFasecounter(int fasecounter) {
+        this.fasecounter = fasecounter;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    
+
+    
  public void atack(JOOS atacker,NIG atacked, int index){
      int a = atacker.getTrop(index).getAtackt();
      atacked.restlife(index, a

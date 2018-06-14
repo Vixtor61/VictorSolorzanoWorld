@@ -84,8 +84,9 @@ public class EDChoser {
                 Tmaker_Builder JOOSS= new tmaker1();
                 trainer1.setTroopBuilder(JOOSS);
                 trainer1.constructTRooP();
-
+                
                 troopmaker joel = trainer1.getTropa();
+                System.out.print("LOOOOOOOOOOOOOL");
                 return joel;
             case tmaker2:
                 Tmaker_Builder NIGer = new tmaker2();

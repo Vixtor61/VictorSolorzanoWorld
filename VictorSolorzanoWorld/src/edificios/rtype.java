@@ -17,6 +17,8 @@ public class rtype extends edificio {
     String type = "";
     int fases = 0;
     int fasesactual=0;
+    
+    int RTOTAL;
 
     public String getType() {
         return type;
@@ -35,10 +37,17 @@ public class rtype extends edificio {
     }
     
     public void makeresource(){
+        if(this.fasesactual  == this.fases){
+        RTOTAL = RTOTAL+resourceP;    
+        }
+        else{
+            System.out.print("SORRY pero faltan "+ (this.fases-this.fasesactual)+" fases para poder recolectar");
+        }
         
     }
      public void sumResources(JOOS merchant){
-     merchant.setResources(merchant.getResources()+resourceP);
+     merchant.setResources(merchant.getResources()+RTOTAL);
+     RTOTAL = 0;
      
    
 }
