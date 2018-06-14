@@ -25,6 +25,7 @@ abstract class Tmaker_Builder {
     public abstract void buildtype();
     public abstract void buildvida();
     public abstract void buildBUILD();
+    public abstract void buildCost();
    
 
 }
@@ -53,6 +54,12 @@ class tmaker1 extends Tmaker_Builder{
     public void buildBUILD() {
         r.setFasesTOBUILD(2);
     }
+    @Override
+    public void buildCost() {
+        r.setCost(100);
+    }
+    
+    
     
     
 }
@@ -78,6 +85,10 @@ class tmaker2 extends Tmaker_Builder{
     public void buildBUILD() {
         r.setFasesTOBUILD(2);
     }
+    @Override
+    public void buildCost() {
+        r.setCost(100);
+    }
     
     
 }
@@ -100,6 +111,6 @@ class Ttypemaker {
         rtypebuilder.buildrace();
         rtypebuilder.buildtype();
         rtypebuilder.buildBUILD();
-       
+        rtypebuilder.buildCost();
     }
 }

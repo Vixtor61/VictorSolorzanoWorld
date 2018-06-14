@@ -26,6 +26,7 @@ abstract class Eresource_Builder {
     public abstract void buildvida();
     public abstract void buildFASESB();
     public abstract void buildR();
+    public abstract void buildCost();
     
 
 }
@@ -36,12 +37,14 @@ class rtype1 extends Eresource_Builder{
     @Override
     public void buildrace() {
         r.race("JOO");
+       
         System.out.print("THE JOO SAYS MONEY \n");
     }
 
     @Override
     public void buildtype() {
-        r.type("rtype1");
+        r.setType("rtype1");
+        System.out.print("DFDFDFD");
     }
 
     @Override
@@ -56,6 +59,11 @@ class rtype1 extends Eresource_Builder{
     @Override
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
+    }
+
+    @Override
+    public void buildCost() {
+        r.setCost(100);
     }
     
 }
@@ -71,7 +79,7 @@ class rtype2 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("rtype2");
+        r.setType("rtype2");
     }
 
     @Override
@@ -85,6 +93,10 @@ class rtype2 extends Eresource_Builder{
     @Override
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
+    }
+    @Override
+    public void buildCost() {
+        r.setCost(100);
     }
     
     
@@ -99,7 +111,7 @@ class rtype3 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("rtype3");
+        r.setType("rtype3");
     }
 
     @Override
@@ -114,6 +126,10 @@ class rtype3 extends Eresource_Builder{
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
     }
+    @Override
+    public void buildCost() {
+        r.setCost(100);
+    }
     
     
 }
@@ -127,7 +143,7 @@ class rtype4 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("rtype4");
+        r.setType("rtype4");
     }
 
     @Override
@@ -142,6 +158,10 @@ class rtype4 extends Eresource_Builder{
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
     }
+    @Override
+    public void buildCost() {
+        r.setCost(100);
+    }
     
     
 }
@@ -155,7 +175,7 @@ class rtype5 extends Eresource_Builder{
 
     @Override
     public void buildtype() {
-        r.type("rtype5");
+        r.setType("rtype5");
     }
 
     @Override
@@ -170,6 +190,10 @@ class rtype5 extends Eresource_Builder{
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
     }
+    @Override
+    public void buildCost() {
+        r.setCost(100);
+    }
     
     
     
@@ -179,12 +203,13 @@ class rtype6 extends Eresource_Builder{
     @Override
     public void buildrace() {
         r.race("NIG");
+        
         System.out.print("THE NIG SAYS OGHA BOOga \n");
     }
 
     @Override
     public void buildtype() {
-        r.type("rtype6");
+        r.setType("rtype6");
     }
 
     @Override
@@ -198,6 +223,10 @@ class rtype6 extends Eresource_Builder{
     @Override
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
+    }
+    @Override
+    public void buildCost() {
+        r.setCost(100);
     }
     
     
@@ -225,5 +254,6 @@ class Rtypemaker {
         rtypebuilder.buildtype();
         rtypebuilder.buildR();
        rtypebuilder.buildFASESB();
+       rtypebuilder.buildCost();
     }
 }

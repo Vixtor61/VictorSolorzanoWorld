@@ -17,6 +17,15 @@ public class edificio{
     private int fasesTOBUILD=0;
     private int FasestoBuildA=0;
     private boolean building = true;
+    private int cost;
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
 
     public boolean isBuilding() {
         return building;

@@ -105,15 +105,12 @@ public class RACE {
         }
     }
     public void SHOWRTYPES(){
-        System.out.print("Showing all tropmakers: \n");
-        for (rtype rtypeList : rtypeList){
-            if(!rtypeList.isBuilding()){
-            System.out.print("rtype race:"+rtypeList.getrace()+" troopmaker type:"+rtypeList.getType()+" troopmaker life:"+rtypeList.getVida()+" \n");
+        System.out.print("Showing all rtypes: \n");
+        for (rtype rtypeLists : rtypeList){
+
+            System.out.print("rtype race:"+rtypeLists.getrace()+" troopmaker type:"+rtypeLists.getType()+" rtype life:"+rtypeLists.getVida()+ " Status:"+rtypeLists.isBuilding() +"\n");
                 
-            }
-            {
-                System.out.print("there are rtype buildings being made\n");
-            }
+            
             
         
         }
@@ -133,9 +130,9 @@ public class RACE {
         return null;
     }
     public void UPDATE(player p){
-        for (rtype rtypeList : rtypeList){
-            
-            rtypeList.UPDATE();
+        for (rtype rtypeLists : rtypeList){
+            rtypeLists.update();
+            rtypeLists.UPDATE();
             
         
         }
@@ -182,27 +179,30 @@ public class RACE {
         for (rtype resourceB : rtypeList){
             if(!resourceB.isBuilding() && contA==a){
                 if(p.getRace()=="razas.JOOS"){
+                 
+                    System.out.print(resourceB.getType()+"  fgfkgjhktghfgkjfdslkfkf");
                     if(resourceB.getType()=="rtype1"){
-                       this.resources1 = this.resources1 + resourceB.getResourceP(); 
+                        System.out.print("sdgfsdgfd");
+                       this.resources1 = this.resources1 + resourceB.make(); 
                     }
                     if(resourceB.getType()=="rtype2"){
-                       this.resources2 = this.resources2 + resourceB.getResourceP(); 
+                       this.resources2 = this.resources2 + resourceB.make(); 
                     }
                     if(resourceB.getType()=="rtype3"){
-                       this.resources3 = this.resources3 + resourceB.getResourceP(); 
+                       this.resources3 = this.resources3 + resourceB.make(); 
                     }
                     
                     
                 }
                 if(p.getRace()=="razas.NIG"){
                     if(resourceB.getType()=="rtype4"){
-                       this.resources1 = this.resources1 + resourceB.getResourceP(); 
+                       this.resources1 = this.resources1 + resourceB.make(); 
                     }
                     if(resourceB.getType()=="rtype5"){
-                       this.resources2 = this.resources2 + resourceB.getResourceP(); 
+                       this.resources2 = this.resources2 + resourceB.make(); 
                     }
                     if(resourceB.getType()=="rtype6"){
-                       this.resources3 = this.resources3 + resourceB.getResourceP(); 
+                       this.resources3 = this.resources3 + resourceB.make(); 
                     }}
                 
                 

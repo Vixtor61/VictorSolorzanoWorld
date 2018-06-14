@@ -53,8 +53,21 @@ public class Building_Menu {
                 }
                 break;
             case 3:
+                System.out.print("USE RTYPE: \n");
+                if(race == "razas.JOOS"){
+                play.getJ().SHOWRTYPES();
+                chooseRype = r.nextInt();
                 
+                play.getJ().useRtypeBuilding(chooseRype, play);
+                }
+                if(race == "razas.NIG"){
+                play.getN().SHOWTMAKER();    
+                chooseRype = r.nextInt();
+                play.getN().useTmakerBuilding(chooseRype, play);
+                }
                 break;
+                
+                        
             case 4:
                 break;
             default:

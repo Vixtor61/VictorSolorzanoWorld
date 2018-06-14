@@ -8,6 +8,7 @@ package razas;
 
 import edificios.EDChoser;
 import edificios.choseEd;
+import edificios.rtype;
 import edificios.troopmaker;
 import java.util.Scanner;
 
@@ -31,27 +32,53 @@ public class buildingChoose {
         case 1:
             EDChoser tmaker = new EDChoser(choseEd.tmaker);
             troopmaker t= tmaker.createTmaker();
-            a.tropmakerList.add(t);
+            if(a.getResources()>=t.getCost()){
+                a.setResources(a.getResources()-t.getCost());
+                a.tropmakerList.add(t);   
+            }
+            else{
+                System.out.print("sorry m8 u need moar "+a.getRtype1name()+"\n");
+            }
+            
             break;
         case 2:
             EDChoser rtype1 = new EDChoser(choseEd.rtype1);
-     
-            a.tropmakerList.add(rtype1.createTmaker());
-            
+            rtype r1 = rtype1.createtropp();
+            if(a.getResources()>=r1.getCost()){
+                a.setResources(a.getResources()-r1.getCost());
+                a.rtypeList.add(r1);   
+            }
+            else{
+                System.out.print("sorry m8 u need moar "+a.getRtype1name()+"\n");
+            }
             break;
         case 3:
             EDChoser rtype2 = new EDChoser(choseEd.rtype2);
      
-            a.tropmakerList.add(rtype2.createTmaker());
+            rtype r2 = rtype2.createtropp();
+            if(a.getResources()>=r2.getCost()){
+                a.setResources(a.getResources()-r2.getCost());
+                a.rtypeList.add(r2);   
+            }
+            else{
+                System.out.print("sorry m8 u need moar "+a.getRtype1name()+"\n");
+            }
             break;
         case 4:
             EDChoser rtype3 = new EDChoser(choseEd.rtype3);
      
-            a.tropmakerList.add(rtype3.createTmaker());
+            rtype r3 = rtype3.createtropp();
+            if(a.getResources()>=r3.getCost()){
+                a.setResources(a.getResources()-r3.getCost());
+                a.rtypeList.add(r3);   
+            }
+            else{
+                System.out.print("sorry m8 u need moar "+a.getRtype1name()+"\n");
+            }
             break;
-        case 5:
-            break;
+       
         default:
+            System.out.print("not valid\n");
             break;
                   
                         
@@ -71,27 +98,54 @@ public class buildingChoose {
         switch(p){
         case 1:
             EDChoser tmaker = new EDChoser(choseEd.tmaker2);
-     
-            a.tropmakerList.add(tmaker.createTmaker());
+            troopmaker t= tmaker.createTmaker();
+            if(a.getResources()>=t.getCost()){
+                a.setResources(a.getResources()-t.getCost());
+                a.tropmakerList.add(t);   
+            }
+            else{
+                System.out.print("sorry m8 u need moar "+a.getRtype1name()+"\n");
+            }
             
             break;
         case 2:
             EDChoser rtype1 = new EDChoser(choseEd.rtype4);
-     
-            a.tropmakerList.add(rtype1.createTmaker());
-            
+            rtype r1 = rtype1.createtropp();
+            if(a.getResources()>=r1.getCost()){
+                a.setResources(a.getResources()-r1.getCost());
+                a.rtypeList.add(r1);   
+            }
+            else{
+                System.out.print("sorry m8 u need moar "+a.getRtype1name()+"\n");
+            }
             break;
         case 3:
             EDChoser rtype2 = new EDChoser(choseEd.rtype5);
      
-            a.tropmakerList.add(rtype2.createTmaker());
+            rtype r2 = rtype2.createtropp();
+            if(a.getResources()>=r2.getCost()){
+                a.setResources(a.getResources()-r2.getCost());
+                a.rtypeList.add(r2);   
+            }
+            else{
+                System.out.print("sorry m8 u need moar "+a.getRtype1name()+"\n");
+            }
             break;
         case 4:
             EDChoser rtype3 = new EDChoser(choseEd.rtype6);
      
-            a.tropmakerList.add(rtype3.createTmaker());
+            rtype r3 = rtype3.createtropp();
+            if(a.getResources()>=r3.getCost()){
+                a.setResources(a.getResources()-r3.getCost());
+                a.rtypeList.add(r3);   
+            }
+            else{
+                System.out.print("sorry m8 u need moar "+a.getRtype1name()+"\n");
+            }
             break;
+        
         default:
+            System.out.print("not valid\n");
             break;
                   
                         

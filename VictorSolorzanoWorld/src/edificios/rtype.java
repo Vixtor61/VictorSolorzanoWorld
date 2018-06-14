@@ -17,6 +17,7 @@ public class rtype extends edificio {
     String type = "";
     int fases = 0;
     int fasesactual=0;
+    private boolean collect=true;
     
     int RTOTAL;
 
@@ -45,10 +46,21 @@ public class rtype extends edificio {
         }
         
     }
+    public int make(){
+        if(collect==true){
+            collect=false;
+            return this.getResourceP();
+        }
+        System.out.print("you already collected this turn");
+        return 0;
+    }
      public void sumResources(JOOS merchant){
      merchant.setResources(merchant.getResources()+RTOTAL);
      RTOTAL = 0;
      
    
 }
+     public void update(){
+     this.collect=true;
+     }
 }
