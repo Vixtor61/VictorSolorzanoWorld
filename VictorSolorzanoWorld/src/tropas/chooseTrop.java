@@ -55,6 +55,25 @@ training trainer = new training();
 
                 tropa niga = trainer.getTropa();
                 return niga;
+            case NIGvehicle:
+                troopBuilder NIGars = new NIGvehicle();
+                trainer.setTroopBuilder(NIGars);
+                
+                trainer.constructTRooP();
+
+                tropa nigass = trainer.getTropa();
+                return nigass;
+            case JOOSvehicle:
+                troopBuilder jjj = new JOOSvehicle();
+                trainer.setTroopBuilder(jjj);
+                
+                trainer.constructTRooP();
+
+                tropa jj = trainer.getTropa();
+                return jj;
+                
+                
+                
                         
             default:
                 System.out.println("OII m8 there are no troops with that name");

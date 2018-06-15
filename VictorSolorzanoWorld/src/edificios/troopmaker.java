@@ -35,7 +35,10 @@ public class troopmaker extends edificio {
               chooseTrop f= new chooseTrop(chose.JOOarmy);
         this.making.add(f.createtropp());
         }
-        
+        if(Type == "vehicle"){
+              chooseTrop f= new chooseTrop(chose.JOOSvehicle);
+        this.making.add(f.createtropp());
+        }
     }
     public void maketroop(NIG nig,String Type){
         if(Type == "especial"){
@@ -46,6 +49,11 @@ public class troopmaker extends edificio {
               chooseTrop f= new chooseTrop(chose.NIGarmy);
         this.making.add(f.createtropp());
         }
+                if(Type == "vehicle"){
+              chooseTrop f= new chooseTrop(chose.NIGvehicle);
+        this.making.add(f.createtropp());
+        }
+                
     }
     public void update(player p){
         int cont=0;

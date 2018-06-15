@@ -20,7 +20,7 @@ public class ChooseAtaked {
     Scanner I = new Scanner(System.in);
         System.out.print("1-attack rtype\n");
     System.out.print("2-attack troopmaker\n ");
-    System.out.print("attacke trop\n");
+    System.out.print("3-attacke trop\n");
     b = K.nextInt();
     switch(b){
         case 1:

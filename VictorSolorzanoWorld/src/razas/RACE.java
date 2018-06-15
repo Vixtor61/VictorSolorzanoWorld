@@ -199,7 +199,7 @@ public class RACE {
         for (troopmaker TropLists : tropmakerList){
             if(!TropLists.isBuilding() && contA==a){
                 if(p.getRace()=="razas.JOOS"){
-                    System.out.print("Chose trop type\n 1-Especial\n 2-army\n");
+                    System.out.print("Chose trop type\n 1-Especial\n 2-army\n 3-vehicle\n");
                     choseTrop = Ch.nextInt();
                     switch(choseTrop){
                         case 1:
@@ -208,11 +208,14 @@ public class RACE {
                         case 2:
                             TropLists.maketroop(p.getJ(), "army");
                     break;
+                    case 3:
+                            TropLists.maketroop(p.getJ(), "vehicle");
+                    break;
                     }
                     
                 }
                 if(p.getRace()=="razas.NIG"){
-                    System.out.print("Chose trop type\n 1-Especial\n 2-army\n");
+                    System.out.print("Chose trop type\n 1-Especial\n 2-army\n 3-vehicle");
                     choseTrop = Ch.nextInt();
                     switch(choseTrop){
                         case 1:
@@ -221,6 +224,10 @@ public class RACE {
                         case 2:
                             TropLists.maketroop(p.getN(), "army");
                             break;
+                        case 3:
+                            TropLists.maketroop(p.getJ(), "vehicle");
+                    break;    
+                            
                     }}
                 
                 

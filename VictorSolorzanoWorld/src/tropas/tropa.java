@@ -145,23 +145,28 @@ abstract class troopBuilder {
 /* "ConcreteBuilder" */
 class JOOBuilder extends troopBuilder {
     
+    @Override
     public void buildrace() {
         tropa.race("JOO ");
         System.out.print("THE JOO SAYS MONEY \n");
     }
 
+    @Override
     public void buildtype() {
         tropa.type("especial");
     }
 
+    @Override
     public void buildvida() {
         tropa.vida(45);
     }
+    @Override
     public void buildattack() {
         tropa.attack(4);
     }
 
    
+    @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
@@ -176,22 +181,27 @@ class JOOBuilder extends troopBuilder {
 /* "ConcreteBuilder" */
 class NIGBuilder extends troopBuilder {
     
+    @Override
     public void buildrace() {
         tropa.race("NIG ");
         System.out.print("THE NIG SAYS ASHHHH \n");
     }
 
+    @Override
     public void buildtype() {
         tropa.type("especial");
     }
 
+    @Override
     public void buildvida() {
         tropa.vida(15);
     }
+    @Override
     public void buildattack() {
         tropa.attack(3);
     }
     
+    @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
@@ -203,22 +213,27 @@ tropa.setTconstruccion(2);
 }
 class NIGarmy extends troopBuilder {
     
+    @Override
     public void buildrace() {
         tropa.race("NIG");
         System.out.print("THE NIG SAYS ASHHHH \n");
     }
 
+    @Override
     public void buildtype() {
         tropa.type("army");
     }
 
+    @Override
     public void buildvida() {
         tropa.vida(11);
     }
+    @Override
     public void buildattack() {
         tropa.attack(3);
     }
     
+    @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
@@ -230,22 +245,91 @@ tropa.setTconstruccion(2);
 }
 class JOOSarmy extends troopBuilder {
     
+    @Override
     public void buildrace() {
         tropa.race("JOO");
         System.out.print("THE JOO SAYS Money \n");
     }
 
+    @Override
     public void buildtype() {
         tropa.type("army");
     }
 
+    @Override
     public void buildvida() {
         tropa.vida(17);
     }
+    @Override
     public void buildattack() {
         tropa.attack(2);
     }
  
+    @Override
+    public void buildstatus() {
+        tropa.setIsA(false);
+    }
+    @Override
+    public void buildTconst() {
+       
+tropa.setTconstruccion(2);    
+    }
+}
+class JOOSvehicle extends troopBuilder {
+    
+    @Override
+    public void buildrace() {
+        tropa.race("JOO");
+        System.out.print("THE JOO SAYS Money \n");
+    }
+
+    @Override
+    public void buildtype() {
+        tropa.type("vehicle");
+    }
+
+    @Override
+    public void buildvida() {
+        tropa.vida(300);
+    }
+    @Override
+    public void buildattack() {
+        tropa.attack(2);
+    }
+ 
+    @Override
+    public void buildstatus() {
+        tropa.setIsA(false);
+    }
+    @Override
+    public void buildTconst() {
+       
+tropa.setTconstruccion(2);    
+    }
+}
+class NIGvehicle extends troopBuilder {
+    
+    @Override
+    public void buildrace() {
+        tropa.race("NIg");
+        System.out.print("THE JOO SAYS Money \n");
+    }
+
+    @Override
+    public void buildtype() {
+        tropa.type("vehicle");
+    }
+
+    @Override
+    public void buildvida() {
+        tropa.vida(250);
+    }
+    @Override
+    public void buildattack() {
+        tropa.attack(2);
+    }
+ 
+    @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
