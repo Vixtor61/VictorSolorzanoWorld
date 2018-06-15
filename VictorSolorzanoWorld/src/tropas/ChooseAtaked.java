@@ -15,7 +15,9 @@ import victorsolorzanoworld.player;
 public class ChooseAtaked {
     public void menuattack(tropa a,player enemi){
     int b;
+    int index;
     Scanner K = new Scanner(System.in);
+    Scanner I = new Scanner(System.in);
         System.out.print("1-attack rtype\n");
     System.out.print("2-attack troopmaker\n ");
     System.out.print("attacke trop\n");
@@ -24,9 +26,14 @@ public class ChooseAtaked {
         case 1:
             if(enemi.getRace()== "razas.JOOS"){
                 enemi.getJ().SHOWRTYPES();
+                index = I.nextInt();
+                enemi.getJ().useAtackeRtype(index, a);
+                
             }
             if(enemi.getRace()=="razas.NIG"){
-                
+                enemi.getN().SHOWRTYPES();
+                index = I.nextInt();
+                enemi.getN().useAtackeRtype(index, a);
             }
             
     }

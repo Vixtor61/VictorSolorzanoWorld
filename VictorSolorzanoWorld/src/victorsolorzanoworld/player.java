@@ -69,9 +69,10 @@ private boolean defeat= false;
     public void setN(NIG n) {
         this.n = n;
     }
-    public void update(){
+    public void update(player enemi){
         if(race.equals("razas.JOOS")){
             this.j.UPDATE(this);
+            this.j.updateTropstatus(enemi);
             if(j.defeat){
                 System.out.print("gg");
                 this.setDefeat(true);
@@ -79,6 +80,7 @@ private boolean defeat= false;
         }
         if(race.equals("razas.NIG")){
             this.n.UPDATE(this);
+            this.n.updateTropstatus(enemi);
             if(n.defeat){
                 this.setDefeat(true);
             }

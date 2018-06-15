@@ -9,6 +9,7 @@ import edificios.rtype;
 import edificios.troopmaker;
 import java.util.ArrayList;
 import java.util.Scanner;
+import tropas.ChooseAtaked;
 import tropas.tropa;
 import victorsolorzanoworld.player;
 
@@ -26,6 +27,7 @@ public class RACE {
     private int live;
     public boolean defeat = false;
     public ArrayList<tropa> TropList = new ArrayList<tropa>();
+    public ArrayList<tropa> TropListA = new ArrayList<tropa>();
     public ArrayList<rtype> rtypeList = new ArrayList<rtype>();
     public ArrayList<troopmaker> tropmakerList = new ArrayList<troopmaker>();
 
@@ -95,6 +97,29 @@ public class RACE {
         
         }
     }
+     public void SelectTrop(player enemi){
+         int  p;
+         int cont=0;
+        Scanner Ch = new Scanner(System.in);
+         System.out.print("Showing all avadibletroops trops: \n");
+        for (tropa TropList : TropList){
+            
+            System.out.print("trop race:"+TropList.getrace()+" troop type:"+TropList.getType()+ " troop atacck:"+TropList.getAtackt()+" troop life:"+TropList.getVida()+" \n");
+            
+        
+        }
+        p = Ch.nextInt();
+        
+            for (tropa TropListx : TropList){
+                if(cont == p){
+                    ChooseAtaked a = new ChooseAtaked();
+                    a.menuattack(TropListx, enemi);
+                    TropListx.setAtacking(cont);
+                    
+                }
+                cont++;
+        }
+    }
     public void SHOWTMAKER(){
         System.out.print("Showing all tropmakers: \n");
         for (troopmaker TropList : tropmakerList){
@@ -147,9 +172,24 @@ public class RACE {
         
         
     }
+   
+               
         
-            
-        }
+        
+        
+    }    
+    public void updateTropstatus(player enemi){
+        for (tropa TropLists : TropList){
+             System.out.print("updating");
+             this.useAtacker(TropLists, enemi);
+             
+               
+        
+        
+        
+    }
+    }        
+        
     public void useTmakerBuilding(int a,player p ){
         int contA=0;
         for (troopmaker TropLists : tropmakerList){
@@ -174,19 +214,155 @@ public class RACE {
         
             
         }
-        public void useRtypeBuilding(int a,tropa atackerp){
+    public void useRtypeBuilding(int a,player p ){
+  
+      
+         int contA=0;
+         for (rtype resourceB : rtypeList){
+      
+            if(!resourceB.isBuilding() && contA==a){
+            if(contA==a){
+                if(p.getRace()=="razas.JOOS"){
+                
+                 
+                    System.out.print(resourceB.getType()+"  fgfkgjhktghfgkjfdslkfkf");
+                    if(resourceB.getType()=="rtype1"){
+                        System.out.print("sdgfsdgfd");
+                       this.resources1 = this.resources1 + resourceB.make(); 
+                    }
+                    if(resourceB.getType()=="rtype2"){
+                       this.resources2 = this.resources2 + resourceB.make(); 
+                    }
+                    if(resourceB.getType()=="rtype3"){
+                       this.resources3 = this.resources3 + resourceB.make(); 
+                    }
+                    
+                    
+                }
+                if(p.getRace()=="razas.NIG"){
+                    if(resourceB.getType()=="rtype4"){
+                       this.resources1 = this.resources1 + resourceB.make(); 
+                    }
+                    if(resourceB.getType()=="rtype5"){
+                       this.resources2 = this.resources2 + resourceB.make(); 
+                    }
+                    if(resourceB.getType()=="rtype6"){
+                       this.resources3 = this.resources3 + resourceB.make(); 
+                    }
+                }
+                
+                
+             }
+             }
+            else{
+               
+                System.out.print("TMAKER NOT AVADIBLE\n");
+            }
+               contA++;
+         
+         
+         
+         
+         
+         
+     }
+             
+         }
+    public void updatedamege(int hash,int atack){
+        for (rtype resourceB : rtypeList){
+            if(hash == resourceB.hashCode()){
+                resourceB.vida(resourceB.getVida()-atack);
+            }
+        }
+        for (tropa resourceB : TropList){
+            if(hash == resourceB.hashCode()){
+                resourceB.vida(resourceB.getVida()-atack);
+            }
+        }
+        for (troopmaker resourceB : tropmakerList){
+            if(hash == resourceB.hashCode()){
+                resourceB.vida(resourceB.getVida()-atack);
+            }
+        }
+    }
+     public void useAtacker(tropa atacker,player atacked){
+        
+        if(atacker.isIsA()){
+            if(atacked.getRace()=="razas.JOOS"){
+                atacked.getJ().updatedamege(atacker.getAtacking(), atacker.getAtackt());
+            }
+            if(atacked.getRace()=="razas.NIG"){
+                atacked.getN().updatedamege(atacker.getAtacking(), atacker.getAtackt());
+            }
+        }
+        
+        
+        
+        
+        
+    }
+        public void useAtackeRtype(int a,tropa atackerp){
         int contA=0;
+        int hash=0;
         for (rtype resourceB : rtypeList){
             if(contA==a){
-                resource
+                if(resourceB.getVida()>0){
+                resourceB.vida(resourceB.getVida()-atackerp.getAtackt());
+                hash=resourceB.hashCode();
+                atackerp.setAtacking(hash);
+                atackerp.setIsA(true);
+                }
+                
             }
                
-        
-        
-        
-    }
         contA++;
+        
+        
+        
     }
+        
+        
+    }
+        public void useAtackeTmaker(int a,tropa atackerp){
+        int contA=0;
+        int hash=0;
+        for (troopmaker tmaker12 : tropmakerList){
+            if(contA==a){
+                if(tmaker12.getVida()>0){
+                tmaker12.vida(tmaker12.getVida()-atackerp.getAtackt());
+                hash=tmaker12.hashCode();
+                atackerp.setAtacking(hash);
+                atackerp.setIsA(true);
+                }
+                
+            }
+               
+        contA++;
+        
+        
+        
+    }
+    }
+        public void useAtackeTroop(int a,tropa atackerp){
+        int contA=0;
+        int hash=0;
+        for (tropa tropp : TropList){
+            if(contA==a){
+                if(tropp.getVida()>0){
+                tropp.vida(tropp.getVida()-atackerp.getAtackt());
+                hash=tropp.hashCode();
+                atackerp.setAtacking(hash);    
+                }
+                
+            }
+               
+        contA++;
+        
+        
+        
+    }
+            
+        }
     public void restlife(int index,int rest){
         int aux;
         int aux2;

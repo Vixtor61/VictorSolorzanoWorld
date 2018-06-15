@@ -22,9 +22,18 @@ public class tropa{
     private int TconstruccionA=0;
     private int tAtacke;
     private boolean beingAtaked = false;
+    int atacking;
     private troopmaker atackingt = null;
     private rtype Atacking = null;
     private tropa AtackingT = null;
+
+    public int getAtacking() {
+        return atacking;
+    }
+
+    public void setAtacking(int atacking) {
+        this.atacking = atacking;
+    }
     
     public void updateTraining(){
         this.TconstruccionA = this.TconstruccionA+1;
