@@ -41,9 +41,11 @@ public class racemenu {
         case 2:
             if(a=="razas.JOOS"){
                play.getJ().SHOW(); 
+               play.getJ().SelectTrop(enemi);
             }
             if(a=="razas.NIG"){
                play.getN().SHOW();
+               play.getJ().SelectTrop(enemi);
             }
             break;
         case 3:

@@ -114,7 +114,7 @@ public class RACE {
                 if(cont == p){
                     ChooseAtaked a = new ChooseAtaked();
                     a.menuattack(TropListx, enemi);
-                    TropListx.setAtacking(cont);
+                   
                     
                 }
                 cont++;

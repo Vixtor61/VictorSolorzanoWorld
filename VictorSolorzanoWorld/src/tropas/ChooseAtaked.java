@@ -27,12 +27,14 @@ public class ChooseAtaked {
             if(enemi.getRace()== "razas.JOOS"){
                 enemi.getJ().SHOWRTYPES();
                 index = I.nextInt();
+                System.out.print("select enemy to atack\n");
                 enemi.getJ().useAtackeRtype(index, a);
                 
             }
             if(enemi.getRace()=="razas.NIG"){
                 enemi.getN().SHOWRTYPES();
                 index = I.nextInt();
+                System.out.print("select enemy to atack\n");
                 enemi.getN().useAtackeRtype(index, a);
             }
             

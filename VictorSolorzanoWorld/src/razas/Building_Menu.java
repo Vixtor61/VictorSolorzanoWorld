@@ -61,9 +61,9 @@ public class Building_Menu {
                 play.getJ().useRtypeBuilding(chooseRype, play);
                 }
                 if(race == "razas.NIG"){
-                play.getN().SHOWTMAKER();    
+                play.getN().SHOWRTYPES();    
                 chooseRype = r.nextInt();
-                play.getN().useTmakerBuilding(chooseRype, play);
+                play.getN().useRtypeBuilding(chooseRype, play);
                 }
                 break;
                 
