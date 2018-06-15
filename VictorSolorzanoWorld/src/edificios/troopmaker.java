@@ -29,17 +29,21 @@ public class troopmaker extends edificio {
             chooseTrop f= new chooseTrop(chose.JOOespecial);
             this.making.add(f.createtropp());
             }
-        if(Type == "army"){
-            /*
-            chooseTrop f= new chooseTrop(chose.JOOarmy);
-        JO.TropList.add(f.createtropp());
-*/        
-}
+     
+            
+                    if(Type == "army"){
+              chooseTrop f= new chooseTrop(chose.JOOarmy);
+        this.making.add(f.createtropp());
+        }
         
     }
     public void maketroop(NIG nig,String Type){
         if(Type == "especial"){
               chooseTrop f= new chooseTrop(chose.NIGespecial);
+        this.making.add(f.createtropp());
+        }
+                if(Type == "army"){
+              chooseTrop f= new chooseTrop(chose.NIGarmy);
         this.making.add(f.createtropp());
         }
     }
@@ -54,6 +58,7 @@ public class troopmaker extends edificio {
         }
         for(tropa tactual:making){
             if(tactual.isIsA()){
+               // System.out.print("fdfdfdfdfdfDFDFDFDFD");
                         if(this.getrace()=="JOO"){
                     p.getJ().TropList.add(tactual);
                     

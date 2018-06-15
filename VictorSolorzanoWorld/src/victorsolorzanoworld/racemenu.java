@@ -59,6 +59,14 @@ public class racemenu {
         case 4:
             tp = 0;
             break;
+        case 5:
+            if(a=="razas.JOOS"){
+                play.getJ().deleteALLTROPS();
+            }
+            if(a=="razas.NIG"){
+                play.getN().deleteALLTROPS();
+            }
+            break;
         default:
             System.out.print("not valid\n");
             

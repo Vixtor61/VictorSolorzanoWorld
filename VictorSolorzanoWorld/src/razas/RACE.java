@@ -179,6 +179,7 @@ public class RACE {
         
     }    
     public void updateTropstatus(player enemi){
+        
         for (tropa TropLists : TropList){
              System.out.print("updating");
              this.useAtacker(TropLists, enemi);
@@ -192,14 +193,35 @@ public class RACE {
         
     public void useTmakerBuilding(int a,player p ){
         int contA=0;
+        int choseTrop;
+        Scanner Ch = new Scanner(System.in);
+        
         for (troopmaker TropLists : tropmakerList){
             if(!TropLists.isBuilding() && contA==a){
                 if(p.getRace()=="razas.JOOS"){
-                    TropLists.maketroop(p.getJ(), "especial");
+                    System.out.print("Chose trop type\n 1-Especial\n 2-army\n");
+                    choseTrop = Ch.nextInt();
+                    switch(choseTrop){
+                        case 1:
+                            TropLists.maketroop(p.getJ(), "especial");
+                            break;
+                        case 2:
+                            TropLists.maketroop(p.getJ(), "army");
+                    break;
+                    }
+                    
                 }
                 if(p.getRace()=="razas.NIG"){
-                    TropLists.maketroop(p.getN(), "especial");
-                }
+                    System.out.print("Chose trop type\n 1-Especial\n 2-army\n");
+                    choseTrop = Ch.nextInt();
+                    switch(choseTrop){
+                        case 1:
+                            TropLists.maketroop(p.getN(), "especial");
+                        break;
+                        case 2:
+                            TropLists.maketroop(p.getN(), "army");
+                            break;
+                    }}
                 
                 
             }
@@ -225,7 +247,7 @@ public class RACE {
                 if(p.getRace()=="razas.JOOS"){
                 
                  
-                    System.out.print(resourceB.getType()+"  fgfkgjhktghfgkjfdslkfkf");
+                    System.out.print(resourceB.getType());
                     if(resourceB.getType()=="rtype1"){
                         System.out.print("sdgfsdgfd");
                        this.resources1 = this.resources1 + resourceB.make(); 
@@ -399,6 +421,9 @@ public class RACE {
         System.out.print(this.rtype1name+": "+this.resources1+"\n");
         System.out.print(this.rtype2name+": "+this.resources2+"\n");
         System.out.print(this.rtype3name+": "+this.resources3+"\n");
+    }
+    public void deleteALLTROPS(){
+        this.TropList.remove(0);
     }
         
         
