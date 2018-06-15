@@ -24,20 +24,26 @@ public class ChooseAtaked {
     b = K.nextInt();
     switch(b){
         case 1:
-            if(enemi.getRace()== "razas.JOOS"){
-                enemi.getJ().SHOWRTYPES();
+           
+                enemi.getR().SHOWRTYPES();
                 index = I.nextInt();
                 System.out.print("select enemy to atack\n");
-                enemi.getJ().useAtackeRtype(index, a);
+                enemi.getR().useAtackeRtype(index, a);
+                break;
                 
-            }
-            if(enemi.getRace()=="razas.NIG"){
-                enemi.getN().SHOWRTYPES();
+        case 2:   
+           
+            enemi.getR().SHOWRTYPES();
                 index = I.nextInt();
                 System.out.print("select enemy to atack\n");
-                enemi.getN().useAtackeRtype(index, a);
-            }
-            
+                enemi.getR().useAtackeTmaker(index, a);
+                break;
+        case 3:
+            enemi.getR().SHOWRTYPES();
+                index = I.nextInt();
+                System.out.print("select enemy to atack\n");
+                enemi.getR().useAtackeTroop(index, a);
+                break;
     }
 }
 }

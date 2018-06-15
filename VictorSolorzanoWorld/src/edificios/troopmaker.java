@@ -8,6 +8,7 @@ package edificios;
 import java.util.ArrayList;
 import razas.JOOS;
 import razas.NIG;
+import razas.RACE;
 import tropas.chooseTrop;
 import tropas.chose;
 import tropas.tropa;
@@ -24,7 +25,7 @@ public class troopmaker extends edificio {
     private int troopMax = 5;
     private ArrayList<tropa>  making= new ArrayList<tropa>();
     boolean isMaking;
-    public void maketroop(JOOS JO,String Type){
+    public void maketroop(RACE JO,String Type){
         if(Type == "especial"){
             chooseTrop f= new chooseTrop(chose.JOOespecial);
             this.making.add(f.createtropp());
@@ -40,21 +41,7 @@ public class troopmaker extends edificio {
         this.making.add(f.createtropp());
         }
     }
-    public void maketroop(NIG nig,String Type){
-        if(Type == "especial"){
-              chooseTrop f= new chooseTrop(chose.NIGespecial);
-        this.making.add(f.createtropp());
-        }
-                if(Type == "army"){
-              chooseTrop f= new chooseTrop(chose.NIGarmy);
-        this.making.add(f.createtropp());
-        }
-                if(Type == "vehicle"){
-              chooseTrop f= new chooseTrop(chose.NIGvehicle);
-        this.making.add(f.createtropp());
-        }
-                
-    }
+   
     public void update(player p){
         int cont=0;
         int[] arrayIndex;
@@ -67,13 +54,11 @@ public class troopmaker extends edificio {
         for(tropa tactual:making){
             if(tactual.isIsA()){
                // System.out.print("fdfdfdfdfdfDFDFDFDFD");
-                        if(this.getrace()=="JOO"){
-                    p.getJ().TropList.add(tactual);
+                     
+                    p.getR().TropList.add(tactual);
                     
-                }
-                if(this.getrace()=="NIG"){
-                    p.getN().TropList.add(tactual);
-                }
+                
+              
                 
                 arrayIndex[contE]=cont;
                 contE++;

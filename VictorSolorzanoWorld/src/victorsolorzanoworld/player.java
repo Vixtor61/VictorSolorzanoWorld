@@ -7,6 +7,8 @@ package victorsolorzanoworld;
 
 import razas.JOOS;
 import razas.NIG;
+import razas.RACE;
+import razas.menuchooseR;
 
 /**
  *
@@ -16,7 +18,22 @@ public class player {
     private JOOS j = null;
 private NIG n = null;
 private String race;
+private RACE r;
 private boolean defeat= false;
+
+    public player() {
+    menuchooseR ra =new menuchooseR();
+    r =ra.chooseRace();
+    
+    }
+
+    public RACE getR() {
+        return r;
+    }
+
+    public void setR(RACE r) {
+        this.r = r;
+    }
 
     public String getRace() {
         return race;
@@ -35,23 +52,7 @@ private boolean defeat= false;
         this.defeat = defeat;
     }
 
-    public player(int a) {
-        
-        
-        switch(a){
-            case 1:
-                j = new JOOS();
-                race = j.getClass().getName();
-                break;
-            case 2:
-                n = new NIG();
-                race = n.getClass().getName();
-                break;
-            default:
-                System.out.print("not valid\n");
-        }
-    }
-
+    
 
     public JOOS getJ() {
         return j;
@@ -70,21 +71,14 @@ private boolean defeat= false;
         this.n = n;
     }
     public void update(player enemi){
-        if(race.equals("razas.JOOS")){
-            this.j.UPDATE(this);
-            this.j.updateTropstatus(enemi);
-            if(j.defeat){
+        
+            this.r.UPDATE(this);
+            this.r.updateTropstatus(enemi);
+            if(r.defeat){
                 System.out.print("gg");
                 this.setDefeat(true);
             }
-        }
-        if(race.equals("razas.NIG")){
-            this.n.UPDATE(this);
-            this.n.updateTropstatus(enemi);
-            if(n.defeat){
-                this.setDefeat(true);
-            }
-        }
+        
         
         
         

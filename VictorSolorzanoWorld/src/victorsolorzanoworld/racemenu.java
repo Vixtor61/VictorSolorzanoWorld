@@ -30,43 +30,31 @@ public class racemenu {
     switch(tp){
         case 1:
             Building_Menu MB = new Building_Menu();
-            if(a=="razas.JOOS"){
-               MB.menuEdificio(a,play); 
-            }
-            if(a=="razas.NIG"){
-               MB.menuEdificio(a,play); 
-            }
+          
+               MB.menuEdificio(play); 
+            
+            
+            
+            
             
             break;
         case 2:
-            if(a=="razas.JOOS"){
-               play.getJ().SHOW(); 
-               play.getJ().SelectTrop(enemi);
-            }
-            if(a=="razas.NIG"){
-               play.getN().SHOW();
-               play.getJ().SelectTrop(enemi);
-            }
+           
+               play.getR().SHOW(); 
+               play.getR().SelectTrop(enemi);
             break;
+            
         case 3:
-            if(a=="razas.JOOS"){
-               play.getJ().ShowResource();
-            }
-            if(a=="razas.NIG"){
-               play.getN().ShowResource();
-            }
+    
+               play.getR().ShowResource();
+            
+            
             break;
         case 4:
             tp = 0;
             break;
-        case 5:
-            if(a=="razas.JOOS"){
-                play.getJ().deleteALLTROPS();
-            }
-            if(a=="razas.NIG"){
-                play.getN().deleteALLTROPS();
-            }
-            break;
+        
+        
         default:
             System.out.print("not valid\n");
             

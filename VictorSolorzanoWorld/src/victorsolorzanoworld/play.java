@@ -34,8 +34,8 @@ private String current;
     }
 
  public void Start(){
-    player p= new player(1);
-    player p2= new player(2);
+    player p= new player();
+    player p2= new player();
      racemenu s =  new racemenu();
      
      while(!p.isDefeat() && !p2.isDefeat()){

@@ -14,7 +14,7 @@ import victorsolorzanoworld.player;
  * @author victor
  */
 public class Building_Menu {
-    public void menuEdificio(String race,player play){
+    public void menuEdificio(player play){
         int p;
         int chooseRype;
         Scanner r = new Scanner(System.in);
@@ -22,49 +22,39 @@ public class Building_Menu {
         
         System.out.print("1 - create a building\n");
         System.out.print("2 - troopmakerbuilding\n");
-        System.out.print("3 - vehiclemaker building\n");
-        System.out.print("4 - resource building\n");
-        System.out.print("5 - salir\n");
+        System.out.print("3 - resource building\n");
+        
+        System.out.print("4 - salir\n");
         p=g.nextInt();
         switch(p){
             case 1:
                 buildingChoose b = new buildingChoose();
-                if(race == "razas.JOOS"){
-                b.chosea(play.getJ());
+          
+                b.chosea(play.getR());
                 
-                }
-                if(race == "razas.NIG"){
-                b.chosea(play.getN());    
-                }
-                 
+                
+             
+             
                 
                 break;
             case 2:
                 System.out.print("USE TMAKER: \n");
-                if(race == "razas.JOOS"){
-                play.getJ().SHOWTMAKER();
+                
+                play.getR().SHOWTMAKER();
                 chooseRype = r.nextInt();
-                play.getJ().useTmakerBuilding(chooseRype, play);
-                }
-                if(race == "razas.NIG"){
-                play.getN().SHOWTMAKER();    
-                chooseRype = r.nextInt();
-                play.getN().useTmakerBuilding(chooseRype, play);
-                }
+                play.getR().useTmakerBuilding(chooseRype, play);
+                
+                
                 break;
             case 3:
                 System.out.print("USE RTYPE: \n");
-                if(race == "razas.JOOS"){
-                play.getJ().SHOWRTYPES();
+            
+                play.getR().SHOWRTYPES();
                 chooseRype = r.nextInt();
                 
-                play.getJ().useRtypeBuilding(chooseRype, play);
-                }
-                if(race == "razas.NIG"){
-                play.getN().SHOWRTYPES();    
-                chooseRype = r.nextInt();
-                play.getN().useRtypeBuilding(chooseRype, play);
-                }
+                play.getR().useRtypeBuilding(chooseRype, play);
+                
+                
                 break;
                 
                         

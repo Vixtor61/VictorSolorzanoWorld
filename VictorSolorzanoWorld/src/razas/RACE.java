@@ -18,6 +18,7 @@ import victorsolorzanoworld.player;
  * @author victor
  */
 public class RACE {
+    private String racename;
     private String rtype1name;
     private String rtype2name;
     private String rtype3name;
@@ -30,6 +31,14 @@ public class RACE {
     public ArrayList<tropa> TropListA = new ArrayList<tropa>();
     public ArrayList<rtype> rtypeList = new ArrayList<rtype>();
     public ArrayList<troopmaker> tropmakerList = new ArrayList<troopmaker>();
+
+    public String getRacename() {
+        return racename;
+    }
+
+    public void setRacename(String racename) {
+        this.racename = racename;
+    }
 
     public String getRtype1name() {
         return rtype1name;
@@ -198,37 +207,23 @@ public class RACE {
         
         for (troopmaker TropLists : tropmakerList){
             if(!TropLists.isBuilding() && contA==a){
-                if(p.getRace()=="razas.JOOS"){
+      
                     System.out.print("Chose trop type\n 1-Especial\n 2-army\n 3-vehicle\n");
                     choseTrop = Ch.nextInt();
                     switch(choseTrop){
                         case 1:
-                            TropLists.maketroop(p.getJ(), "especial");
+                            TropLists.maketroop(p.getR(), "especial");
                             break;
                         case 2:
-                            TropLists.maketroop(p.getJ(), "army");
+                            TropLists.maketroop(p.getR(), "army");
                     break;
                     case 3:
-                            TropLists.maketroop(p.getJ(), "vehicle");
+                            TropLists.maketroop(p.getR(), "vehicle");
                     break;
                     }
                     
-                }
-                if(p.getRace()=="razas.NIG"){
-                    System.out.print("Chose trop type\n 1-Especial\n 2-army\n 3-vehicle");
-                    choseTrop = Ch.nextInt();
-                    switch(choseTrop){
-                        case 1:
-                            TropLists.maketroop(p.getN(), "especial");
-                        break;
-                        case 2:
-                            TropLists.maketroop(p.getN(), "army");
-                            break;
-                        case 3:
-                            TropLists.maketroop(p.getJ(), "vehicle");
-                    break;    
-                            
-                    }}
+                
+                
                 
                 
             }
@@ -251,7 +246,7 @@ public class RACE {
       
             if(!resourceB.isBuilding() && contA==a){
             if(contA==a){
-                if(p.getRace()=="razas.JOOS"){
+            
                 
                  
                     System.out.print(resourceB.getType());
@@ -267,18 +262,8 @@ public class RACE {
                     }
                     
                     
-                }
-                if(p.getRace()=="razas.NIG"){
-                    if(resourceB.getType()=="rtype4"){
-                       this.resources1 = this.resources1 + resourceB.make(); 
-                    }
-                    if(resourceB.getType()=="rtype5"){
-                       this.resources2 = this.resources2 + resourceB.make(); 
-                    }
-                    if(resourceB.getType()=="rtype6"){
-                       this.resources3 = this.resources3 + resourceB.make(); 
-                    }
-                }
+                
+               
                 
                 
              }
@@ -317,13 +302,11 @@ public class RACE {
      public void useAtacker(tropa atacker,player atacked){
         
         if(atacker.isIsA()){
-            if(atacked.getRace()=="razas.JOOS"){
-                atacked.getJ().updatedamege(atacker.getAtacking(), atacker.getAtackt());
+            
+                atacked.getR().updatedamege(atacker.getAtacking(), atacker.getAtackt());
             }
-            if(atacked.getRace()=="razas.NIG"){
-                atacked.getN().updatedamege(atacker.getAtacking(), atacker.getAtackt());
-            }
-        }
+          
+        
         
         
         
