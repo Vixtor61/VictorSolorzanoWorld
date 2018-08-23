@@ -9,35 +9,39 @@ package edificios;
  *
  * @author UCA
  */
+abstract class EresourceBuilder {
 
-abstract class Eresource_Builder {
-    protected rtype r;
+    protected ResourceBuilding r;
 
-    public rtype getTropa() {
+    public ResourceBuilding getTropa() {
         return r;
     }
 
     public void createNewRtypeProduct() {
-        r = new rtype();
+        r = new ResourceBuilding();
     }
 
     public abstract void buildrace();
+
     public abstract void buildtype();
+
     public abstract void buildvida();
+
     public abstract void buildFASESB();
+
     public abstract void buildR();
+
     public abstract void buildCost();
-    
 
 }
 
 /* "ConcreteBuilder" */
-class rtype1 extends Eresource_Builder{
-    
+class rtype1 extends EresourceBuilder {
+
     @Override
     public void buildrace() {
         r.race("JOO");
-       
+
         System.out.print("THE JOO SAYS MONEY \n");
     }
 
@@ -51,6 +55,7 @@ class rtype1 extends Eresource_Builder{
     public void buildvida() {
         r.vida(45);
     }
+
     @Override
     public void buildR() {
         r.setResourceP(45);
@@ -65,16 +70,16 @@ class rtype1 extends Eresource_Builder{
     public void buildCost() {
         r.setCost(100);
     }
-    
+
 }
 
-class rtype2 extends Eresource_Builder{
-    
+class rtype2 extends EresourceBuilder {
+
     @Override
     public void buildrace() {
         r.race("JOO");
         System.out.print("THE JOO SAYS MONEY \n");
-    
+
     }
 
     @Override
@@ -86,23 +91,26 @@ class rtype2 extends Eresource_Builder{
     public void buildvida() {
         r.vida(45);
     }
+
     @Override
     public void buildR() {
         r.setResourceP(45);
     }
+
     @Override
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
     }
+
     @Override
     public void buildCost() {
         r.setCost(100);
     }
-    
-    
+
 }
-class rtype3 extends Eresource_Builder{
-    
+
+class rtype3 extends EresourceBuilder {
+
     @Override
     public void buildrace() {
         r.race("JOO");
@@ -118,23 +126,26 @@ class rtype3 extends Eresource_Builder{
     public void buildvida() {
         r.vida(45);
     }
+
     @Override
     public void buildR() {
         r.setResourceP(45);
     }
+
     @Override
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
     }
+
     @Override
     public void buildCost() {
         r.setCost(100);
     }
-    
-    
+
 }
-class rtype4 extends Eresource_Builder{
-    
+
+class rtype4 extends EresourceBuilder {
+
     @Override
     public void buildrace() {
         r.race("NIG");
@@ -150,23 +161,26 @@ class rtype4 extends Eresource_Builder{
     public void buildvida() {
         r.vida(120);
     }
+
     @Override
     public void buildR() {
         r.setResourceP(46);
     }
+
     @Override
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
     }
+
     @Override
     public void buildCost() {
         r.setCost(100);
     }
-    
-    
+
 }
-class rtype5 extends Eresource_Builder{
-    
+
+class rtype5 extends EresourceBuilder {
+
     @Override
     public void buildrace() {
         r.race("NIG");
@@ -182,28 +196,30 @@ class rtype5 extends Eresource_Builder{
     public void buildvida() {
         r.vida(165);
     }
+
     @Override
     public void buildR() {
         r.setResourceP(36);
     }
+
     @Override
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
     }
+
     @Override
     public void buildCost() {
         r.setCost(100);
     }
-    
-    
-    
+
 }
-class rtype6 extends Eresource_Builder{
-    
+
+class rtype6 extends EresourceBuilder {
+
     @Override
     public void buildrace() {
         r.race("NIG");
-        
+
         System.out.print("THE NIG SAYS OGHA BOOga \n");
     }
 
@@ -216,34 +232,34 @@ class rtype6 extends Eresource_Builder{
     public void buildvida() {
         r.vida(1000);
     }
+
     @Override
     public void buildR() {
         r.setResourceP(2);
     }
+
     @Override
     public void buildFASESB() {
         r.setFasesTOBUILD(2);
     }
+
     @Override
     public void buildCost() {
         r.setCost(100);
     }
-    
-    
+
 }
-
-
-
 
 /* "Director" */
 class Rtypemaker {
-    private Eresource_Builder rtypebuilder;
 
-    public void setTroopBuilder(Eresource_Builder pb) {
+    private EresourceBuilder rtypebuilder;
+
+    public void setTroopBuilder(EresourceBuilder pb) {
         rtypebuilder = pb;
     }
 
-    public rtype getTropa() {
+    public ResourceBuilding getTropa() {
         return rtypebuilder.getTropa();
     }
 
@@ -253,7 +269,7 @@ class Rtypemaker {
         rtypebuilder.buildrace();
         rtypebuilder.buildtype();
         rtypebuilder.buildR();
-       rtypebuilder.buildFASESB();
-       rtypebuilder.buildCost();
+        rtypebuilder.buildFASESB();
+        rtypebuilder.buildCost();
     }
 }

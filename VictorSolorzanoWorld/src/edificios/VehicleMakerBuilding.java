@@ -9,10 +9,12 @@ package edificios;
  *
  * @author UCA
  */
-public class vehiclemaker {
-    private int life=0;
-    public void restlife(int p){
-        life = life-p;
+public class VehicleMakerBuilding {
+
+    private int life = 0;
+
+    public void restlife(int p) {
+        life = life - p;
     }
-    
+
 }

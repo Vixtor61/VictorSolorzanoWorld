@@ -9,43 +9,43 @@ package razas;
  *
  * @author victor
  */
-public class racechoser {
+public class RaceChooser {
 
-    chooserace type;
+    ChooseRace type;
     racemaker trainer = new racemaker();
-    
-    public racechoser(chooserace type) {
+
+    public RaceChooser(ChooseRace type) {
         this.type = type;
     }
 
-    public RACE createrace() {
+    public Race createrace() {
         switch (type) {
             case VAMPIRES:
-                raceBuilder NIGer = new VAMPIRO();
+                RaceBuilder NIGer = new VAMPIRO();
                 trainer.setTroopBuilder(NIGer);
                 trainer.constructTRooP();
 
-                RACE nig = trainer.getTropa();
+                Race nig = trainer.getTropa();
                 return nig;
 
             case OGROS:
-                raceBuilder JOOer = new OGRO();
+                RaceBuilder JOOer = new OGRO();
                 trainer.setTroopBuilder(JOOer);
 
                 trainer.constructTRooP();
 
-                RACE joo = trainer.getTropa();
+                Race joo = trainer.getTropa();
                 return joo;
-                
+
             case SPACECATS:
-                raceBuilder JOOe = new CAT();
+                RaceBuilder JOOe = new CAT();
                 trainer.setTroopBuilder(JOOe);
 
                 trainer.constructTRooP();
 
-                RACE joo1 = trainer.getTropa();
+                Race joo1 = trainer.getTropa();
                 return joo1;
-             
+
             default:
                 System.out.println("OII m8 there are no troops with that name");
                 break;
@@ -53,5 +53,4 @@ public class racechoser {
         return null;
     }
 
-    
 }

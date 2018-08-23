@@ -5,27 +5,28 @@
  */
 package tropas;
 
-import edificios.rtype;
-import edificios.troopmaker;
+import edificios.ResourceBuilding;
+import edificios.TroopMakerBuilding;
 
 /**
  *
  * @author victor
  */
-public class tropa{
+public class Tropa {
+
     private int vida = 0;
     private String race = "";
-    private String type= "";
+    private String type = "";
     private int atackt = 0;
     private boolean isA;
     private int Tconstruccion;
-    private int TconstruccionA=0;
+    private int TconstruccionA = 0;
     private int tAtacke;
     private boolean beingAtaked = false;
     int atacking;
-    private troopmaker atackingt = null;
-    private rtype Atacking = null;
-    private tropa AtackingT = null;
+    private TroopMakerBuilding atackingt = null;
+    private ResourceBuilding Atacking = null;
+    private Tropa AtackingT = null;
 
     public int getAtacking() {
         return atacking;
@@ -34,10 +35,10 @@ public class tropa{
     public void setAtacking(int atacking) {
         this.atacking = atacking;
     }
-    
-    public void updateTraining(){
-        this.TconstruccionA = this.TconstruccionA+1;
-        if(this.TconstruccionA >= this.Tconstruccion){
+
+    public void updateTraining() {
+        this.TconstruccionA = this.TconstruccionA + 1;
+        if (this.TconstruccionA >= this.Tconstruccion) {
             this.setIsA(true);
         }
     }
@@ -49,7 +50,7 @@ public class tropa{
     public void setTconstruccionA(int TconstruccionA) {
         this.TconstruccionA = TconstruccionA;
     }
-    
+
     public int getTconstruccion() {
         return Tconstruccion;
     }
@@ -65,7 +66,7 @@ public class tropa{
     public void settAtacke(int tAtacke) {
         this.tAtacke = tAtacke;
     }
-    
+
     public String getRace() {
         return race;
     }
@@ -94,10 +95,12 @@ public class tropa{
     public void type(String type) {
         this.type = type;
     }
-    public void attack(int attack){
+
+    public void attack(int attack) {
         this.atackt = attack;
     }
-    public String getrace(){
+
+    public String getrace() {
         return race;
     }
 
@@ -110,41 +113,48 @@ public class tropa{
     }
 
     public int getAtackt() {
-        
+
         return atackt;
-        
+
     }
-    public void restlife(int rest){
-        vida = vida-rest;
-                
+
+    public void restlife(int rest) {
+        vida = vida - rest;
+
     }
-    
+
 }
 
 /* "Abstract Builder" */
 abstract class troopBuilder {
-    protected tropa tropa;
 
-    public tropa getTropa() {
+    protected Tropa tropa;
+
+    public Tropa getTropa() {
         return tropa;
     }
 
     public void createNewtropaProduct() {
-        tropa = new tropa();
+        tropa = new Tropa();
     }
 
     public abstract void buildrace();
+
     public abstract void buildtype();
+
     public abstract void buildvida();
+
     public abstract void buildattack();
+
     public abstract void buildstatus();
+
     public abstract void buildTconst();
-   
+
 }
 
 /* "ConcreteBuilder" */
 class JOOBuilder extends troopBuilder {
-    
+
     @Override
     public void buildrace() {
         tropa.race("JOO ");
@@ -160,12 +170,12 @@ class JOOBuilder extends troopBuilder {
     public void buildvida() {
         tropa.vida(45);
     }
+
     @Override
     public void buildattack() {
         tropa.attack(4);
     }
 
-   
     @Override
     public void buildstatus() {
         tropa.setIsA(false);
@@ -173,14 +183,14 @@ class JOOBuilder extends troopBuilder {
 
     @Override
     public void buildTconst() {
-       
-        tropa.setTconstruccion(3);    
+
+        tropa.setTconstruccion(3);
     }
 }
 
 /* "ConcreteBuilder" */
 class NIGBuilder extends troopBuilder {
-    
+
     @Override
     public void buildrace() {
         tropa.race("NIG ");
@@ -196,23 +206,26 @@ class NIGBuilder extends troopBuilder {
     public void buildvida() {
         tropa.vida(15);
     }
+
     @Override
     public void buildattack() {
         tropa.attack(3);
     }
-    
+
     @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
+
     @Override
     public void buildTconst() {
-       
-tropa.setTconstruccion(2);    
+
+        tropa.setTconstruccion(2);
     }
 }
+
 class NIGarmy extends troopBuilder {
-    
+
     @Override
     public void buildrace() {
         tropa.race("NIG");
@@ -228,23 +241,26 @@ class NIGarmy extends troopBuilder {
     public void buildvida() {
         tropa.vida(11);
     }
+
     @Override
     public void buildattack() {
         tropa.attack(3);
     }
-    
+
     @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
+
     @Override
     public void buildTconst() {
-       
-tropa.setTconstruccion(2);    
+
+        tropa.setTconstruccion(2);
     }
 }
+
 class JOOSarmy extends troopBuilder {
-    
+
     @Override
     public void buildrace() {
         tropa.race("JOO");
@@ -260,23 +276,26 @@ class JOOSarmy extends troopBuilder {
     public void buildvida() {
         tropa.vida(17);
     }
+
     @Override
     public void buildattack() {
         tropa.attack(2);
     }
- 
+
     @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
+
     @Override
     public void buildTconst() {
-       
-tropa.setTconstruccion(2);    
+
+        tropa.setTconstruccion(2);
     }
 }
+
 class JOOSvehicle extends troopBuilder {
-    
+
     @Override
     public void buildrace() {
         tropa.race("JOO");
@@ -292,23 +311,26 @@ class JOOSvehicle extends troopBuilder {
     public void buildvida() {
         tropa.vida(300);
     }
+
     @Override
     public void buildattack() {
         tropa.attack(2);
     }
- 
+
     @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
+
     @Override
     public void buildTconst() {
-       
-tropa.setTconstruccion(2);    
+
+        tropa.setTconstruccion(2);
     }
 }
+
 class NIGvehicle extends troopBuilder {
-    
+
     @Override
     public void buildrace() {
         tropa.race("NIg");
@@ -324,31 +346,34 @@ class NIGvehicle extends troopBuilder {
     public void buildvida() {
         tropa.vida(250);
     }
+
     @Override
     public void buildattack() {
         tropa.attack(2);
     }
- 
+
     @Override
     public void buildstatus() {
         tropa.setIsA(false);
     }
+
     @Override
     public void buildTconst() {
-       
-tropa.setTconstruccion(2);    
+
+        tropa.setTconstruccion(2);
     }
 }
 
 /* "Director" */
 class training {
+
     private troopBuilder troopBuilder;
 
     public void setTroopBuilder(troopBuilder pb) {
         troopBuilder = pb;
     }
 
-    public tropa getTropa() {
+    public Tropa getTropa() {
         return troopBuilder.getTropa();
     }
 

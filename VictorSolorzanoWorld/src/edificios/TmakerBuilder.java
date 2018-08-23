@@ -9,30 +9,33 @@ package edificios;
  *
  * @author UCA
  */
+abstract class TmakerBuilder {
 
-abstract class Tmaker_Builder {
-    protected troopmaker r;
+    protected TroopMakerBuilding r;
 
-    public troopmaker getTropa() {
+    public TroopMakerBuilding getTropa() {
         return r;
     }
 
     public void createNewRtypeProduct() {
-        r = new troopmaker();
+        r = new TroopMakerBuilding();
     }
 
     public abstract void buildrace();
+
     public abstract void buildtype();
+
     public abstract void buildvida();
+
     public abstract void buildBUILD();
+
     public abstract void buildCost();
-   
 
 }
 
 /* "ConcreteBuilder" */
-class tmaker1 extends Tmaker_Builder{
-    
+class tmaker1 extends TmakerBuilder {
+
     @Override
     public void buildrace() {
         r.race("JOO");
@@ -49,23 +52,20 @@ class tmaker1 extends Tmaker_Builder{
         r.vida(45);
     }
 
-    
     @Override
     public void buildBUILD() {
         r.setFasesTOBUILD(2);
     }
+
     @Override
     public void buildCost() {
         r.setCost(100);
     }
-    
-    
-    
-    
+
 }
 
-class tmaker2 extends Tmaker_Builder{
-    
+class tmaker2 extends TmakerBuilder {
+
     @Override
     public void buildrace() {
         r.race("NIG");
@@ -81,27 +81,29 @@ class tmaker2 extends Tmaker_Builder{
     public void buildvida() {
         r.vida(45);
     }
+
     @Override
     public void buildBUILD() {
         r.setFasesTOBUILD(2);
     }
+
     @Override
     public void buildCost() {
         r.setCost(100);
     }
-    
-    
+
 }
 
 /* "Director" */
 class Ttypemaker {
-    private Tmaker_Builder rtypebuilder;
 
-    public void setTroopBuilder(Tmaker_Builder pb) {
+    private TmakerBuilder rtypebuilder;
+
+    public void setTroopBuilder(TmakerBuilder pb) {
         rtypebuilder = pb;
     }
 
-    public troopmaker getTropa() {
+    public TroopMakerBuilding getTropa() {
         return rtypebuilder.getTropa();
     }
 

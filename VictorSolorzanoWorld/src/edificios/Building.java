@@ -9,13 +9,13 @@ package edificios;
  *
  * @author victor
  */
+public class Building {
 
-public class edificio{
     private int vida = 0;
     private String race = "";
-    private String type= "";
-    private int fasesTOBUILD=0;
-    private int FasestoBuildA=0;
+    private String type = "";
+    private int fasesTOBUILD = 0;
+    private int FasestoBuildA = 0;
     private boolean building = true;
     private int cost;
 
@@ -34,7 +34,6 @@ public class edificio{
     public void setBuilding(boolean building) {
         this.building = building;
     }
-    
 
     public String getRace() {
         return race;
@@ -59,7 +58,6 @@ public class edificio{
     public void setFasestoBuildA(int FasestoBuildA) {
         this.FasestoBuildA = FasestoBuildA;
     }
-   
 
     public void vida(int vida) {
         this.vida = vida;
@@ -74,7 +72,7 @@ public class edificio{
         this.type = type;
     }
 
-    public String getrace(){
+    public String getrace() {
         return race;
     }
 
@@ -85,16 +83,17 @@ public class edificio{
     public String getType() {
         return type;
     }
-    public void restlife(int rest){
-        vida = vida-rest;
-                
+
+    public void restlife(int rest) {
+        vida = vida - rest;
+
     }
-    public void UPDATE(){
-        this.FasestoBuildA = this.FasestoBuildA+1;
-        if(this.FasestoBuildA >= this.fasesTOBUILD){
+
+    public void UPDATE() {
+        this.FasestoBuildA = this.FasestoBuildA + 1;
+        if (this.FasestoBuildA >= this.fasesTOBUILD) {
             this.setBuilding(false);
         }
     }
 
-    
 }

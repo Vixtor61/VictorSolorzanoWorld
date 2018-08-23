@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tropas;
+package razas;
 
 /**
  *
  * @author victor
  */
-public enum chose {
-    NIGespecial,JOOespecial,JOOarmy,NIGarmy,JOOSvehicle,NIGvehicle;
+public enum ChooseRace {
+
+    VAMPIRES, OGROS, SPACECATS;
+
 }

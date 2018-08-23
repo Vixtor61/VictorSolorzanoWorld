@@ -6,15 +6,16 @@
 package razas;
 
 import java.util.Scanner;
-import victorsolorzanoworld.player;
+import victorsolorzanoworld.Player;
 
 /**
  *
  * @author victor
  */
-public class menuchooseR {
-    public RACE chooseRace(){
-        
+public class SelectRaceMenu {
+
+    public Race chooseRace() {
+
         int p;
         Scanner h = new Scanner(System.in);
         System.out.print("Choose your race\n");
@@ -22,25 +23,25 @@ public class menuchooseR {
         System.out.print("2-Ogros\n");
         System.out.print("3-SpaceCats\n");
         p = h.nextInt();
-        switch(p){
+        switch (p) {
             case 1:
-                racechoser tmaker = new racechoser(chooserace.VAMPIRES);
-            RACE t= tmaker.createrace();
-            
-        return t;
-               
+                RaceChooser tmaker = new RaceChooser(ChooseRace.VAMPIRES);
+                Race t = tmaker.createrace();
+
+                return t;
+
             case 2:
-                racechoser tmaker1 = new racechoser(chooserace.OGROS);
-            RACE t2= tmaker1.createrace();
-            
-        return t2;
-               
+                RaceChooser tmaker1 = new RaceChooser(ChooseRace.OGROS);
+                Race t2 = tmaker1.createrace();
+
+                return t2;
+
             case 3:
-                racechoser tmaker2 = new racechoser(chooserace.SPACECATS);
-            RACE t3= tmaker2.createrace();
-            
-            return t3;
-                
+                RaceChooser tmaker2 = new RaceChooser(ChooseRace.SPACECATS);
+                Race t3 = tmaker2.createrace();
+
+                return t3;
+
             default:
                 break;
         }

@@ -9,9 +9,8 @@ package edificios;
  *
  * @author UCA
  */
-public enum choseEd {
-   
-    rtype1,rtype2,rtype3,tmaker,tmaker2,rtype4,rtype5,rtype6;
+public enum ChooseBuilding {
 
+    rtype1, rtype2, rtype3, tmaker, tmaker2, rtype4, rtype5, rtype6;
 
 }

@@ -9,66 +9,66 @@ package edificios;
  *
  * @author UCA
  */
-public class EDChoser {
+public class BuildingChooser {
 
-    choseEd type;
+    ChooseBuilding type;
     Rtypemaker trainer = new Rtypemaker();
     Ttypemaker trainer1 = new Ttypemaker();
 
-    public EDChoser(choseEd type) {
+    public BuildingChooser(ChooseBuilding type) {
         this.type = type;
     }
 
-    public rtype createtropp() {
+    public ResourceBuilding createtropp() {
         switch (type) {
             case rtype1:
-                Eresource_Builder NIGer = new rtype1();
+                EresourceBuilder NIGer = new rtype1();
                 trainer.setTroopBuilder(NIGer);
                 trainer.constructTRooP();
 
-                rtype nig = trainer.getTropa();
+                ResourceBuilding nig = trainer.getTropa();
                 return nig;
 
             case rtype2:
-                Eresource_Builder JOOer = new rtype2();
+                EresourceBuilder JOOer = new rtype2();
                 trainer.setTroopBuilder(JOOer);
 
                 trainer.constructTRooP();
 
-                rtype joo = trainer.getTropa();
+                ResourceBuilding joo = trainer.getTropa();
                 return joo;
-                
+
             case rtype3:
-                Eresource_Builder JOOe = new rtype3();
+                EresourceBuilder JOOe = new rtype3();
                 trainer.setTroopBuilder(JOOe);
 
                 trainer.constructTRooP();
 
-                rtype joo1 = trainer.getTropa();
+                ResourceBuilding joo1 = trainer.getTropa();
                 return joo1;
-             case rtype4:
-                Eresource_Builder JOO4 = new rtype4();
+            case rtype4:
+                EresourceBuilder JOO4 = new rtype4();
                 trainer.setTroopBuilder(JOO4);
 
                 trainer.constructTRooP();
 
-                rtype joo4 = trainer.getTropa();
+                ResourceBuilding joo4 = trainer.getTropa();
                 return joo4;
             case rtype5:
-                Eresource_Builder JOO5 = new rtype5();
+                EresourceBuilder JOO5 = new rtype5();
                 trainer.setTroopBuilder(JOO5);
 
                 trainer.constructTRooP();
 
-                rtype joo5 = trainer.getTropa();
+                ResourceBuilding joo5 = trainer.getTropa();
                 return joo5;
             case rtype6:
-                Eresource_Builder JOO6 = new rtype6();
+                EresourceBuilder JOO6 = new rtype6();
                 trainer.setTroopBuilder(JOO6);
 
                 trainer.constructTRooP();
 
-                rtype joo6 = trainer.getTropa();
+                ResourceBuilding joo6 = trainer.getTropa();
                 return joo6;
 
             default:
@@ -78,23 +78,22 @@ public class EDChoser {
         return null;
     }
 
-    public troopmaker createTmaker() {
+    public TroopMakerBuilding createTmaker() {
         switch (type) {
             case tmaker:
-                Tmaker_Builder JOOSS= new tmaker1();
+                TmakerBuilder JOOSS = new tmaker1();
                 trainer1.setTroopBuilder(JOOSS);
                 trainer1.constructTRooP();
-                
-                troopmaker joel = trainer1.getTropa();
+
+                TroopMakerBuilding joel = trainer1.getTropa();
                 return joel;
             case tmaker2:
-                Tmaker_Builder NIGer = new tmaker2();
+                TmakerBuilder NIGer = new tmaker2();
                 trainer1.setTroopBuilder(NIGer);
                 trainer1.constructTRooP();
 
-                troopmaker nig = trainer1.getTropa();
-                return nig;    
-         
+                TroopMakerBuilding nig = trainer1.getTropa();
+                return nig;
 
             default:
                 System.out.println("OII m8 there are no Buildings with that name");
